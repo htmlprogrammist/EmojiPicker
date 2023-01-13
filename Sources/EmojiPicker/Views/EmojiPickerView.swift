@@ -31,6 +31,8 @@ protocol EmojiPickerViewDelegate: AnyObject {
 
 final class EmojiPickerView: UIView {
     
+    // MARK: - Internal Properties
+    
     weak var delegate: EmojiPickerViewDelegate?
     
     var selectedEmojiCategoryTintColor: UIColor = .systemBlue

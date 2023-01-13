@@ -21,7 +21,7 @@
 
 import Foundation
 
-/// Protocol for the ViewModel which using in EmojiPickerViewController.
+/// Protocol for a ViewModel which is being used in `EmojiPickerViewController`.
 protocol EmojiPickerViewModelProtocol {
     /// The observed variable that is responsible for the choice of emoji.
     var selectedEmoji: Observable<String> { get set }
@@ -37,10 +37,12 @@ protocol EmojiPickerViewModelProtocol {
     func sectionHeaderViewModel(for section: Int) -> String
 }
 
-/// ViewModel which using in EmojiPickerViewController.
+/// Emoji Picker view model.
 final class EmojiPickerViewModel: EmojiPickerViewModelProtocol {
     
+    /// Observable object of selected emoji.
     var selectedEmoji = Observable<String>(value: "")
+    /// Observable object of selected category index of an emoji.
     var selectedEmojiCategoryIndex = Observable<Int>(value: 0)
     
     /// All emoji categories.
