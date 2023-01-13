@@ -10,12 +10,6 @@ import XCTest
 
 class EmojiCategoryTypeTests: XCTestCase {
     
-    override func setUpWithError() throws {
-    }
-    
-    override func tearDownWithError() throws {
-    }
-    
     /// Since we have special order for our emojis, we must test it.
     func testEmojiCategoryTypesOrder() throws {
         let people = EmojiCategoryType(rawValue: 0)

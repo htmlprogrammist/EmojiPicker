@@ -15,10 +15,8 @@ class ConfigurationTests: XCTestCase {
     /// SUT.
     var configuration: Configuration!
     
-    override func setUpWithError() throws {
-    }
-    
     override func tearDownWithError() throws {
+        configuration = nil
     }
     
     func testDefaultInitializer() throws {
