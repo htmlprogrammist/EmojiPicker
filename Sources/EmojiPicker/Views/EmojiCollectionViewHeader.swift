@@ -23,12 +23,6 @@ import UIKit
 
 final class EmojiCollectionViewHeader: UICollectionReusableView {
     
-    var categoryName: String = "" {
-        didSet {
-            headerLabel.text = categoryName
-        }
-    }
-    
     // MARK: - Private Properties
     
     private let headerLabel: UILabel = {
@@ -49,6 +43,12 @@ final class EmojiCollectionViewHeader: UICollectionReusableView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Public Methods
+    
+    public func configure(with text: String) {
+        headerLabel.text = text
     }
     
     // MARK: - Private Methods

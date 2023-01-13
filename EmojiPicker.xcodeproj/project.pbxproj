@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F011B17E297202540088F3FA /* CODE_OF_CONDUCT.md in Resources */ = {isa = PBXBuildFile; fileRef = F011B17C297202540088F3FA /* CODE_OF_CONDUCT.md */; };
+		F011B17F297202540088F3FA /* CONTRIBUTING.md in Resources */ = {isa = PBXBuildFile; fileRef = F011B17D297202540088F3FA /* CONTRIBUTING.md */; };
 		F0A434F42971A0C200663826 /* EmojiPickerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A434F32971A0C200663826 /* EmojiPickerViewModelTests.swift */; };
 		F0A434F82971A0DC00663826 /* UnicodeManagerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A434F62971A0DB00663826 /* UnicodeManagerStub.swift */; };
 		F0A434FA2971A3B900663826 /* ArrayExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A434F92971A3B900663826 /* ArrayExtensionTests.swift */; };
@@ -57,6 +59,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F011B17C297202540088F3FA /* CODE_OF_CONDUCT.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CODE_OF_CONDUCT.md; sourceTree = "<group>"; };
+		F011B17D297202540088F3FA /* CONTRIBUTING.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
 		F0A434F32971A0C200663826 /* EmojiPickerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiPickerViewModelTests.swift; sourceTree = "<group>"; };
 		F0A434F62971A0DB00663826 /* UnicodeManagerStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnicodeManagerStub.swift; sourceTree = "<group>"; };
 		F0A434F92971A3B900663826 /* ArrayExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensionTests.swift; sourceTree = "<group>"; };
@@ -139,6 +143,8 @@
 				F0BB7EC6297157D3004EEBFC /* Tests */,
 				F0BB7ED9297158BC004EEBFC /* EmojiPicker.podspec */,
 				F0BB7F34297169E4004EEBFC /* LICENSE */,
+				F011B17C297202540088F3FA /* CODE_OF_CONDUCT.md */,
+				F011B17D297202540088F3FA /* CONTRIBUTING.md */,
 				F0BB7EBB297157D3004EEBFC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -377,6 +383,7 @@
 					};
 					F0BB7EC1297157D3004EEBFC = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 					};
 				};
 			};
@@ -411,7 +418,9 @@
 			files = (
 				F0BB7ED829715831004EEBFC /* README.md in Resources */,
 				F0BB7F18297159A6004EEBFC /* Localizable.strings in Resources */,
+				F011B17F297202540088F3FA /* CONTRIBUTING.md in Resources */,
 				F0BB7F35297169E5004EEBFC /* LICENSE in Resources */,
+				F011B17E297202540088F3FA /* CODE_OF_CONDUCT.md in Resources */,
 				F0BB7EDB297158BD004EEBFC /* EmojiPicker.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

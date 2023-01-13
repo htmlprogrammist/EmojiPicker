@@ -23,12 +23,6 @@ import UIKit
 
 final class EmojiCollectionViewCell: UICollectionViewCell {
     
-    var emoji: String? {
-        didSet {
-            emojiLabel.text = emoji
-        }
-    }
-    
     // MARK: - Private Properties
     
     private let emojiLabel: UILabel = {
@@ -49,6 +43,12 @@ final class EmojiCollectionViewCell: UICollectionViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Public Methods
+    
+    public func configure(with emoji: String) {
+        emojiLabel.text = emoji
     }
     
     // MARK: - Private Methods
