@@ -106,10 +106,11 @@ public final class EmojiPickerViewController: UIViewController {
         horizontalInset = configuration.horizontalInset
         isDismissAfterChoosing = configuration.isDismissAfterChoosing
         customHeight = configuration.customHeight
-        viewModel = EmojiPickerViewModel()
+        
+        let unicodeManager = UnicodeManager()
+        viewModel = EmojiPickerViewModel(unicodeManager: unicodeManager)
         
         super.init(nibName: nil, bundle: nil)
-        modalPresentationStyle = .popover
         
         delegate = configuration.delegate
         sourceView = configuration.sender
@@ -122,13 +123,17 @@ public final class EmojiPickerViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Life cycle
+    // MARK: - Life Cycle
+    
     override public func loadView() {
         view = emojiPickerView
     }
     
     override public func viewDidLoad() {
         super.viewDidLoad()
+        
+        modalPresentationStyle = .popover
+        
         setupPreferredContentSize()
         setupArrowDirections()
         setupHorizontalInset()

@@ -31,8 +31,8 @@ enum EmojiCategoryType: Int {
     case flags
 }
 
-/// Describes emoji categories
+/// Describes emoji categories.
 struct EmojiCategory {
-    var categoryName: String
-    var emojis: [[Int]]
+    let categoryName: String
+    let emojis: [[Int]]
 }

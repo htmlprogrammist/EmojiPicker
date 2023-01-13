@@ -46,7 +46,7 @@ final class EmojiPickerViewModel: EmojiPickerViewModelProtocol {
     /// All emoji categories.
     private var emojiCategories = [EmojiCategory]()
     
-    init(unicodeManager: UnicodeManagerProtocol = UnicodeManager()) {
+    init(unicodeManager: UnicodeManagerProtocol) {
         emojiCategories = unicodeManager.getEmojisForCurrentIOSVersion()
     }
     
