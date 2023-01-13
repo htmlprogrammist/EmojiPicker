@@ -5,7 +5,7 @@
 //  Created by Егор Бадмаев on 13.01.2023.
 //
 
-import EmojiPicker
+@testable import EmojiPicker
 
 class EmojiPickerDelegateMock: EmojiPickerDelegate {
     func didGetEmoji(emoji: String) {

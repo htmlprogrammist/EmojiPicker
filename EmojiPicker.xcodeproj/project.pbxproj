@@ -13,6 +13,7 @@
 		F0A434FC2971A67F00663826 /* UnicodeManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A434FB2971A67F00663826 /* UnicodeManagerTests.swift */; };
 		F0A434FE2971A69100663826 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A434FD2971A69100663826 /* Observable.swift */; };
 		F0A435002971A6A500663826 /* PickerArrowDirectionModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A434FF2971A6A500663826 /* PickerArrowDirectionModeTests.swift */; };
+		F0A435022971A87500663826 /* EmojiCategoryTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A435012971A87500663826 /* EmojiCategoryTypeTests.swift */; };
 		F0BB7EC3297157D3004EEBFC /* EmojiPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0BB7EBA297157D3004EEBFC /* EmojiPicker.framework */; };
 		F0BB7EC8297157D3004EEBFC /* ConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BB7EC7297157D3004EEBFC /* ConfigurationTests.swift */; };
 		F0BB7ED629715831004EEBFC /* EmojiPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = F0BB7ED329715830004EEBFC /* EmojiPicker.h */; };
@@ -62,6 +63,7 @@
 		F0A434FB2971A67F00663826 /* UnicodeManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnicodeManagerTests.swift; sourceTree = "<group>"; };
 		F0A434FD2971A69100663826 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		F0A434FF2971A6A500663826 /* PickerArrowDirectionModeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerArrowDirectionModeTests.swift; sourceTree = "<group>"; };
+		F0A435012971A87500663826 /* EmojiCategoryTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCategoryTypeTests.swift; sourceTree = "<group>"; };
 		F0BB7EBA297157D3004EEBFC /* EmojiPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EmojiPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0BB7EC2297157D3004EEBFC /* EmojiPickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmojiPickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0BB7EC7297157D3004EEBFC /* ConfigurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationTests.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			children = (
 				F0BB7EC7297157D3004EEBFC /* ConfigurationTests.swift */,
 				F0A434F32971A0C200663826 /* EmojiPickerViewModelTests.swift */,
+				F0A435012971A87500663826 /* EmojiCategoryTypeTests.swift */,
 				F0A434FB2971A67F00663826 /* UnicodeManagerTests.swift */,
 				F0A434FF2971A6A500663826 /* PickerArrowDirectionModeTests.swift */,
 				F0A434F92971A3B900663826 /* ArrayExtensionTests.swift */,
@@ -459,6 +462,7 @@
 				F0A435002971A6A500663826 /* PickerArrowDirectionModeTests.swift in Sources */,
 				F0BB7EC8297157D3004EEBFC /* ConfigurationTests.swift in Sources */,
 				F0BB7F3829716AFD004EEBFC /* EmojiPickerDelegateMock.swift in Sources */,
+				F0A435022971A87500663826 /* EmojiCategoryTypeTests.swift in Sources */,
 				F0A434F42971A0C200663826 /* EmojiPickerViewModelTests.swift in Sources */,
 				F0A434FE2971A69100663826 /* Observable.swift in Sources */,
 				F0A434FC2971A67F00663826 /* UnicodeManagerTests.swift in Sources */,
