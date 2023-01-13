@@ -11,7 +11,7 @@
 		F0A434F82971A0DC00663826 /* UnicodeManagerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A434F62971A0DB00663826 /* UnicodeManagerStub.swift */; };
 		F0A434FA2971A3B900663826 /* ArrayExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A434F92971A3B900663826 /* ArrayExtensionTests.swift */; };
 		F0A434FC2971A67F00663826 /* UnicodeManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A434FB2971A67F00663826 /* UnicodeManagerTests.swift */; };
-		F0A434FE2971A69100663826 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A434FD2971A69100663826 /* Observable.swift */; };
+		F0A434FE2971A69100663826 /* ObservableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A434FD2971A69100663826 /* ObservableTests.swift */; };
 		F0A435002971A6A500663826 /* PickerArrowDirectionModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A434FF2971A6A500663826 /* PickerArrowDirectionModeTests.swift */; };
 		F0A435022971A87500663826 /* EmojiCategoryTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A435012971A87500663826 /* EmojiCategoryTypeTests.swift */; };
 		F0BB7EC3297157D3004EEBFC /* EmojiPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0BB7EBA297157D3004EEBFC /* EmojiPicker.framework */; };
@@ -61,7 +61,7 @@
 		F0A434F62971A0DB00663826 /* UnicodeManagerStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnicodeManagerStub.swift; sourceTree = "<group>"; };
 		F0A434F92971A3B900663826 /* ArrayExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensionTests.swift; sourceTree = "<group>"; };
 		F0A434FB2971A67F00663826 /* UnicodeManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnicodeManagerTests.swift; sourceTree = "<group>"; };
-		F0A434FD2971A69100663826 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		F0A434FD2971A69100663826 /* ObservableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableTests.swift; sourceTree = "<group>"; };
 		F0A434FF2971A6A500663826 /* PickerArrowDirectionModeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerArrowDirectionModeTests.swift; sourceTree = "<group>"; };
 		F0A435012971A87500663826 /* EmojiCategoryTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCategoryTypeTests.swift; sourceTree = "<group>"; };
 		F0BB7EBA297157D3004EEBFC /* EmojiPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EmojiPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,7 +161,7 @@
 				F0A434FB2971A67F00663826 /* UnicodeManagerTests.swift */,
 				F0A434FF2971A6A500663826 /* PickerArrowDirectionModeTests.swift */,
 				F0A434F92971A3B900663826 /* ArrayExtensionTests.swift */,
-				F0A434FD2971A69100663826 /* Observable.swift */,
+				F0A434FD2971A69100663826 /* ObservableTests.swift */,
 				F0BB7F3629716AE9004EEBFC /* Mocks */,
 				F0A434F52971A0CE00663826 /* Stubs */,
 			);
@@ -464,7 +464,7 @@
 				F0BB7F3829716AFD004EEBFC /* EmojiPickerDelegateMock.swift in Sources */,
 				F0A435022971A87500663826 /* EmojiCategoryTypeTests.swift in Sources */,
 				F0A434F42971A0C200663826 /* EmojiPickerViewModelTests.swift in Sources */,
-				F0A434FE2971A69100663826 /* Observable.swift in Sources */,
+				F0A434FE2971A69100663826 /* ObservableTests.swift in Sources */,
 				F0A434FC2971A67F00663826 /* UnicodeManagerTests.swift in Sources */,
 				F0A434FA2971A3B900663826 /* ArrayExtensionTests.swift in Sources */,
 				F0A434F82971A0DC00663826 /* UnicodeManagerStub.swift in Sources */,

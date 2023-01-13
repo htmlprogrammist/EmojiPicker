@@ -85,10 +85,9 @@ extension EmojiCategoryIconView {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         
-        /// New centered rect based on bounds width to prevent stretching of the icon
+        /// New centered rect based on bounds width to prevent stretching of the icon.
         let rect = CGRect(origin: CGPoint(x: 0, y: (rect.height - rect.width) / 2),
-                          size: CGSize(width: rect.width, height: rect.width)
-        )
+                          size: CGSize(width: rect.width, height: rect.width))
         
         switch type {
         case .people:
@@ -110,7 +109,7 @@ extension EmojiCategoryIconView {
         }
     }
     
-    /// Responsible for rendering icons for emoji categories
+    /// Responsible for rendering icons for emoji categories.
     private class CategoryIconsDrawKit: NSObject {
         
         enum ResizingBehavior: Int {
