@@ -15,9 +15,6 @@ class ObservableTests: XCTestCase {
     
     override func setUpWithError() throws {
         observable = Observable(value: 0)
-        observable.bind { [unowned self] number in
-            newValue = number
-        }
     }
     
     override func tearDownWithError() throws {
@@ -25,11 +22,23 @@ class ObservableTests: XCTestCase {
         newValue = nil
     }
     
-    func testChangingValue() throws {
+    func testChangingValueWithBinding() throws {
         let newNumber = 1
+        observable.bind { [unowned self] number in
+            newValue = number
+        }
         
         observable.value = newNumber
         
         XCTAssertEqual(newValue, newNumber)
+    }
+    
+    func testChangingValueWithoutBinding() throws {
+        let newNumber = 1
+        
+        observable.value = newNumber
+        
+        XCTAssertNil(newValue)
+        XCTAssertNotEqual(newValue, newNumber)
     }
 }
