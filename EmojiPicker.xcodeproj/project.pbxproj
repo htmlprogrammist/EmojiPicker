@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F0A434F42971A0C200663826 /* EmojiPickerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A434F32971A0C200663826 /* EmojiPickerViewModelTests.swift */; };
+		F0A434F82971A0DC00663826 /* UnicodeManagerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A434F62971A0DB00663826 /* UnicodeManagerStub.swift */; };
+		F0A434FA2971A3B900663826 /* ArrayExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A434F92971A3B900663826 /* ArrayExtensionTests.swift */; };
+		F0A434FC2971A67F00663826 /* UnicodeManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A434FB2971A67F00663826 /* UnicodeManagerTests.swift */; };
+		F0A434FE2971A69100663826 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A434FD2971A69100663826 /* Observable.swift */; };
+		F0A435002971A6A500663826 /* PickerArrowDirectionModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A434FF2971A6A500663826 /* PickerArrowDirectionModeTests.swift */; };
 		F0BB7EC3297157D3004EEBFC /* EmojiPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0BB7EBA297157D3004EEBFC /* EmojiPicker.framework */; };
 		F0BB7EC8297157D3004EEBFC /* ConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BB7EC7297157D3004EEBFC /* ConfigurationTests.swift */; };
 		F0BB7ED629715831004EEBFC /* EmojiPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = F0BB7ED329715830004EEBFC /* EmojiPicker.h */; };
@@ -50,6 +56,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F0A434F32971A0C200663826 /* EmojiPickerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiPickerViewModelTests.swift; sourceTree = "<group>"; };
+		F0A434F62971A0DB00663826 /* UnicodeManagerStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnicodeManagerStub.swift; sourceTree = "<group>"; };
+		F0A434F92971A3B900663826 /* ArrayExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensionTests.swift; sourceTree = "<group>"; };
+		F0A434FB2971A67F00663826 /* UnicodeManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnicodeManagerTests.swift; sourceTree = "<group>"; };
+		F0A434FD2971A69100663826 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		F0A434FF2971A6A500663826 /* PickerArrowDirectionModeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerArrowDirectionModeTests.swift; sourceTree = "<group>"; };
 		F0BB7EBA297157D3004EEBFC /* EmojiPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EmojiPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0BB7EC2297157D3004EEBFC /* EmojiPickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmojiPickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0BB7EC7297157D3004EEBFC /* ConfigurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationTests.swift; sourceTree = "<group>"; };
@@ -108,6 +120,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F0A434F52971A0CE00663826 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				F0A434F62971A0DB00663826 /* UnicodeManagerStub.swift */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
 		F0BB7EB0297157D3004EEBFC = {
 			isa = PBXGroup;
 			children = (
@@ -133,8 +153,14 @@
 		F0BB7EC6297157D3004EEBFC /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				F0BB7F3629716AE9004EEBFC /* Mocks */,
 				F0BB7EC7297157D3004EEBFC /* ConfigurationTests.swift */,
+				F0A434F32971A0C200663826 /* EmojiPickerViewModelTests.swift */,
+				F0A434FB2971A67F00663826 /* UnicodeManagerTests.swift */,
+				F0A434FF2971A6A500663826 /* PickerArrowDirectionModeTests.swift */,
+				F0A434F92971A3B900663826 /* ArrayExtensionTests.swift */,
+				F0A434FD2971A69100663826 /* Observable.swift */,
+				F0BB7F3629716AE9004EEBFC /* Mocks */,
+				F0A434F52971A0CE00663826 /* Stubs */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -430,8 +456,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0A435002971A6A500663826 /* PickerArrowDirectionModeTests.swift in Sources */,
 				F0BB7EC8297157D3004EEBFC /* ConfigurationTests.swift in Sources */,
 				F0BB7F3829716AFD004EEBFC /* EmojiPickerDelegateMock.swift in Sources */,
+				F0A434F42971A0C200663826 /* EmojiPickerViewModelTests.swift in Sources */,
+				F0A434FE2971A69100663826 /* Observable.swift in Sources */,
+				F0A434FC2971A67F00663826 /* UnicodeManagerTests.swift in Sources */,
+				F0A434FA2971A3B900663826 /* ArrayExtensionTests.swift in Sources */,
+				F0A434F82971A0DC00663826 /* UnicodeManagerStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,6 +632,7 @@
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -609,11 +642,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.egbad.EmojiPicker;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -633,6 +666,7 @@
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -642,10 +676,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.egbad.EmojiPicker;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
