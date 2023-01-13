@@ -114,7 +114,7 @@
 				F0BB7ED429715830004EEBFC /* Package.swift */,
 				F0BB7ED529715830004EEBFC /* README.md */,
 				F0BB7ED229715830004EEBFC /* Sources */,
-				F0BB7EC6297157D3004EEBFC /* EmojiPickerTests */,
+				F0BB7EC6297157D3004EEBFC /* Tests */,
 				F0BB7ED9297158BC004EEBFC /* EmojiPicker.podspec */,
 				F0BB7F34297169E4004EEBFC /* LICENSE */,
 				F0BB7EBB297157D3004EEBFC /* Products */,
@@ -130,13 +130,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F0BB7EC6297157D3004EEBFC /* EmojiPickerTests */ = {
+		F0BB7EC6297157D3004EEBFC /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				F0BB7F3629716AE9004EEBFC /* Mocks */,
 				F0BB7EC7297157D3004EEBFC /* ConfigurationTests.swift */,
 			);
-			path = EmojiPickerTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		F0BB7ED229715830004EEBFC /* Sources */ = {
