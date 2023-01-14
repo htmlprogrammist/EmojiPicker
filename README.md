@@ -7,7 +7,7 @@ Emoji picker for iOS like on macOS
 <img src="https://user-images.githubusercontent.com/50948518/171909950-ebf388f3-83a1-4b63-ad54-f58ba947e3bb.png" width="230">
 </p>
 
-## Navigate
+## Navigation
 
 - [Installation](#installation)
     - [Swift Package Manager](#swift-package-manager)
@@ -130,10 +130,10 @@ configuration.customHeight = 300
 Feedback generator style. To turn off, set `nil` to this parameter. The default value of this property is `.light`.
 
 ```swift
-configuration.feedBackGeneratorStyle = .soft
+configuration.feedbackGeneratorStyle = .soft
 ```
 
-## To do
+## To Do
 
 - [x] The main functionality for choosing emojis
 - [x] Dark mode
@@ -143,7 +143,7 @@ configuration.feedBackGeneratorStyle = .soft
 - [ ] Seach bar and search results
 - [ ] Recently used
 
-## Localizations
+## Localization
 
 * English 🇬🇧
 * Russian 🇷🇺

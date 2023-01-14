@@ -25,7 +25,7 @@ import UIKit
 protocol EmojiPickerViewDelegate: AnyObject {
     /// Processes an event by category selection.
     ///
-    /// - Parameter index: index of the selected category.
+    /// - Parameter index: Index of the selected category.
     func didChoiceEmojiCategory(at index: Int)
 }
 

@@ -21,6 +21,7 @@
 
 import Foundation
 
+/// A type of object that publishes a message after the object has changed.
 final class Observable<T> {
     typealias Listener = (T) -> Void
     

@@ -27,7 +27,7 @@ class ConfigurationTests: XCTestCase {
         XCTAssertEqual(configuration.horizontalInset, 0)
         XCTAssertEqual(configuration.isDismissAfterChoosing, true)
         XCTAssertEqual(configuration.customHeight, nil)
-        XCTAssertEqual(configuration.feedBackGeneratorStyle, .light)
+        XCTAssertEqual(configuration.feedbackGeneratorStyle, .light)
     }
     
     func testFullDataProvided() throws {
@@ -36,7 +36,7 @@ class ConfigurationTests: XCTestCase {
         let horizontalInset: CGFloat = 100
         let isDismissAfterChoosing = false
         let customHeight: CGFloat = 100
-        let feedBackGeneratorStyle = UIImpactFeedbackGenerator.FeedbackStyle.medium
+        let feedbackGeneratorStyle = UIImpactFeedbackGenerator.FeedbackStyle.medium
         
         configuration = Configuration(delegate: delegate,
                                       sender: sender,
@@ -45,13 +45,13 @@ class ConfigurationTests: XCTestCase {
                                       horizontalInset: horizontalInset,
                                       isDismissAfterChoosing: isDismissAfterChoosing,
                                       customHeight: customHeight,
-                                      feedBackGeneratorStyle: feedBackGeneratorStyle)
+                                      feedbackGeneratorStyle: feedbackGeneratorStyle)
         
         XCTAssertEqual(configuration.selectedEmojiCategoryTintColor, selectedEmojiCategoryTintColor)
         XCTAssertEqual(configuration.arrowDirection, arrowDirection)
         XCTAssertEqual(configuration.horizontalInset, horizontalInset)
         XCTAssertEqual(configuration.isDismissAfterChoosing, isDismissAfterChoosing)
         XCTAssertEqual(configuration.customHeight, customHeight)
-        XCTAssertEqual(configuration.feedBackGeneratorStyle, feedBackGeneratorStyle)
+        XCTAssertEqual(configuration.feedbackGeneratorStyle, feedbackGeneratorStyle)
     }
 }
