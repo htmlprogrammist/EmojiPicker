@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'EmojiPicker'
-  s.version = '3.0.2'
+  s.version = '3.0.3'
   s.license = 'MIT'
   s.summary = 'Emoji picker for iOS like on MacOS'
   s.homepage = 'https://github.com/htmlprogrammist/EmojiPicker'
@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.resource_bundle = { "EmojiPicker" => ["Sources/EmojiPicker/**/*.lproj/*.{strings}"] }
   
   s.test_spec 'Tests' do |test_spec|
-    test_spec.source_files = 'Tests/**/*.{swift}'
+    test_spec.source_files = 'Tests/EmojiPickerTests/**/*.{swift}'
   end
   
   s.swift_version = '4.2'
