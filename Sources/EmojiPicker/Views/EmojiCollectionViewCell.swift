@@ -37,6 +37,7 @@ final class EmojiCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         setupSelectedBackgroundView()
         setupLayout()
     }
@@ -75,5 +76,4 @@ final class EmojiCollectionViewCell: UICollectionViewCell {
         selectedView.layer.cornerRadius = 8
         selectedBackgroundView = selectedView
     }
-    
 }

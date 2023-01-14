@@ -9,14 +9,21 @@ let package = Package(
     products: [
         .library(
             name: "EmojiPicker",
-            targets: ["EmojiPicker"]),
+            targets: ["EmojiPicker"]
+        )
     ],
     dependencies: [],
     targets: [
         .target(
             name: "EmojiPicker",
-            dependencies: [],
-            resources: [.process("Resources")])
+            resources: [
+                .process("Resources")
+            ]
+        ),
+        .testTarget(
+            name: "EmojiPickerTests",
+            dependencies: ["EmojiPicker"]
+        )
     ],
-    swiftLanguageVersions: [.v4_2]
+    swiftLanguageVersions: [.v4_2, .v5]
 )

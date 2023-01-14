@@ -65,6 +65,7 @@ final class EmojiCategoryIconView: UIView {
     /// - Parameter state: Target icon state. Based on this state, the target color will be selected.
     func updateIconTintColor(for state: EmojiCategoryIconViewState) {
         guard self.state != state else { return }
+        
         self.state = state
         switch state {
         case .standard:
@@ -87,7 +88,8 @@ extension EmojiCategoryIconView {
         
         /// New centered rect based on bounds width to prevent stretching of the icon.
         let rect = CGRect(origin: CGPoint(x: 0, y: (rect.height - rect.width) / 2),
-                          size: CGSize(width: rect.width, height: rect.width))
+                          size: CGSize(width: rect.width, height: rect.width)
+        )
         
         switch type {
         case .people:

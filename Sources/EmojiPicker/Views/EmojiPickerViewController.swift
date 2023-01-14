@@ -119,7 +119,7 @@ public final class EmojiPickerViewController: UIViewController {
         arrowDirection = configuration.arrowDirection
         selectedEmojiCategoryTintColor = configuration.selectedEmojiCategoryTintColor
         horizontalInset = configuration.horizontalInset
-        isDismissedAfterChoosing = configuration.isDismissAfterChoosing
+        isDismissedAfterChoosing = configuration.isDismissedAfterChoosing
         customHeight = configuration.customHeight
         feedbackGeneratorStyle = configuration.feedbackGeneratorStyle
         
@@ -189,7 +189,8 @@ public final class EmojiPickerViewController: UIViewController {
         let heightProportionToWidth: CGFloat = 1.16
         
         preferredContentSize = CGSize(width: popoverWidth,
-                                      height: customHeight ?? popoverWidth * heightProportionToWidth)
+                                      height: customHeight ?? popoverWidth * heightProportionToWidth
+        )
     }
     
     private func setupArrowDirections() {
