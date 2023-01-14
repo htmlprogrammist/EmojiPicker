@@ -152,6 +152,7 @@ viewController.feedbackGeneratorStyle = .soft
 * French 🇫🇷
 * German 🇩🇪
 * Hindi 🇮🇳
+* Turkish 🇹🇷
 
 ## Experiments
 
