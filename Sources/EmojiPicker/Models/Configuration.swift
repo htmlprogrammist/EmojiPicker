@@ -21,7 +21,7 @@
 
 import UIKit
 
-/// Configuration for an EmojiPicker.
+/// Configuration for an EmojiPicker. Represents list of requirements.
 public struct Configuration {
     /// A view controller on which EmojiPicker is being presented.
     public var delegate: EmojiPickerDelegate
@@ -34,28 +34,29 @@ public struct Configuration {
     /// Inset from the sourceView border.
     public var horizontalInset: CGFloat
     /// Defines whether to dismiss emoji picker or not after choosing.
-    public var isDismissAfterChoosing: Bool
+    public var isDismissedAfterChoosing: Bool
     /// Custom height for EmojiPicker.
     public var customHeight: CGFloat?
     /// Feedback generator style. To turn off, set `nil` to this parameter.
-    public var feedBackGeneratorStyle: UIImpactFeedbackGenerator.FeedbackStyle?
+    public var feedbackGeneratorStyle: UIImpactFeedbackGenerator.FeedbackStyle?
     
+    /// Creates configuration with optional values (memberwise).
     public init(delegate: EmojiPickerDelegate,
                 sender: UIView,
                 selectedEmojiCategoryTintColor: UIColor? = nil,
                 arrowDirection: PickerArrowDirectionMode = .up,
                 horizontalInset: CGFloat = 0,
-                isDismissAfterChoosing: Bool = true,
+                isDismissedAfterChoosing: Bool = true,
                 customHeight: CGFloat? = nil,
-                feedBackGeneratorStyle: UIImpactFeedbackGenerator.FeedbackStyle = .light
+                feedbackGeneratorStyle: UIImpactFeedbackGenerator.FeedbackStyle = .light
     ) {
         self.delegate = delegate
         self.sender = sender
         self.selectedEmojiCategoryTintColor = selectedEmojiCategoryTintColor
         self.arrowDirection = arrowDirection
         self.horizontalInset = horizontalInset
-        self.isDismissAfterChoosing = isDismissAfterChoosing
+        self.isDismissedAfterChoosing = isDismissedAfterChoosing
         self.customHeight = customHeight
-        self.feedBackGeneratorStyle = feedBackGeneratorStyle
+        self.feedbackGeneratorStyle = feedbackGeneratorStyle
     }
 }

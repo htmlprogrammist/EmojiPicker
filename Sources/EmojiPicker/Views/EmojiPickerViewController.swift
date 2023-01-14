@@ -74,7 +74,7 @@ public final class EmojiPickerViewController: UIViewController {
      
      - Note: The default value of this property is `true`.
      */
-    let isDismissAfterChoosing: Bool
+    let isDismissedAfterChoosing: Bool
     
     /**
      Color for the selected emoji category.
@@ -93,20 +93,23 @@ public final class EmojiPickerViewController: UIViewController {
      
      - Note: The default value of this property is `.light`.
      */
-    var feedBackGeneratorStyle: UIImpactFeedbackGenerator.FeedbackStyle? {
+    var feedbackGeneratorStyle: UIImpactFeedbackGenerator.FeedbackStyle? {
         didSet {
-            guard let feedBackGeneratorStyle = feedBackGeneratorStyle else {
-                generator = nil
+            guard let feedBackGeneratorStyle = feedbackGeneratorStyle else {
+                feedbackGenerator = nil
                 return
             }
-            generator = UIImpactFeedbackGenerator(style: feedBackGeneratorStyle)
+            feedbackGenerator = UIImpactFeedbackGenerator(style: feedBackGeneratorStyle)
         }
     }
     
     // MARK: - Private Properties
     
+    /// View of this controller.
     private let emojiPickerView = EmojiPickerView()
-    private var generator: UIImpactFeedbackGenerator?
+    /// An obect that creates haptics to simulate physical impacts.
+    private var feedbackGenerator: UIImpactFeedbackGenerator?
+    /// View model of this module.
     private var viewModel: EmojiPickerViewModelProtocol
     
     // MARK: - Init
@@ -116,8 +119,9 @@ public final class EmojiPickerViewController: UIViewController {
         arrowDirection = configuration.arrowDirection
         selectedEmojiCategoryTintColor = configuration.selectedEmojiCategoryTintColor
         horizontalInset = configuration.horizontalInset
-        isDismissAfterChoosing = configuration.isDismissAfterChoosing
+        isDismissedAfterChoosing = configuration.isDismissAfterChoosing
         customHeight = configuration.customHeight
+        feedbackGeneratorStyle = configuration.feedbackGeneratorStyle
         
         let unicodeManager = UnicodeManager()
         viewModel = EmojiPickerViewModel(unicodeManager: unicodeManager)
@@ -155,12 +159,14 @@ public final class EmojiPickerViewController: UIViewController {
     
     private func bindViewModel() {
         viewModel.selectedEmoji.bind { [unowned self] emoji in
-            generator?.impactOccurred()
+            feedbackGenerator?.impactOccurred()
             delegate?.didGetEmoji(emoji: emoji)
-            if isDismissAfterChoosing {
+            
+            if isDismissedAfterChoosing {
                 dismiss(animated: true, completion: nil)
             }
         }
+        
         viewModel.selectedEmojiCategoryIndex.bind { [unowned self] categoryIndex in
             self.emojiPickerView.updateSelectedCategoryIcon(with: categoryIndex)
         }
@@ -288,7 +294,7 @@ extension EmojiPickerViewController: UICollectionViewDelegateFlowLayout {
 extension EmojiPickerViewController: EmojiPickerViewDelegate {
     
     func didChoiceEmojiCategory(at index: Int) {
-        generator?.impactOccurred()
+        feedbackGenerator?.impactOccurred()
         viewModel.selectedEmojiCategoryIndex.value = index
     }
 }

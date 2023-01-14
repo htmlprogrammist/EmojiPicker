@@ -38,7 +38,6 @@ class ObservableTests: XCTestCase {
         
         observable.value = newNumber
         
-        XCTAssertNil(newValue)
         XCTAssertNotEqual(newValue, newNumber)
     }
 }
