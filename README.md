@@ -22,8 +22,8 @@ Emoji picker for iOS like on macOS
     - [Is dismiss after choosing](#is-dismiss-after-choosing)
     - [Custom height](#custom-height)
     - [Feedback generator style](#feedback-generator-style)
-- [To do](#to-do)
 - [Localizations](#localizations)
+- [Experiments](#experiments)
 
 ## Installation
 
