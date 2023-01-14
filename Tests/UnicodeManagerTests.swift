@@ -36,12 +36,16 @@ class UnicodeManagerTests: XCTestCase {
      Tests getting title for `flags` emoji category.
      
      Unit-tests has no access to resource bundle so the result will be `"flags"`.
+     But this access has CocoaPods, when it is time to do `pod lib lint`. That is why we test it in this way:
+     * If the `result` is not equal to the expected ones, we fail our test.
      */
     func testGettingEmojiCategoryTitle() throws {
         let emojiCategory = EmojiCategoryType.flags
         
         let result = unicodeManager.getEmojiCategoryTitle(for: emojiCategory)
         
-        XCTAssertEqual(result, "flags")
+        if result != "flags" && result != "FLAGS" {
+            XCTFail("The expected output should be one of the expected ones, instead we got: \(result)")
+        }
     }
 }
