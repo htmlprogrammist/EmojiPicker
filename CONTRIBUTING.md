@@ -28,7 +28,6 @@ Here you find all which using in project:
 - // MARK: - Private Methods
 - // MARK: - Ovveride
 - // MARK: - Layout
-- // MARK: - Models
 
 If you can't find valid, add new to codestyle agreements please. Other can be use if class is large and need struct it even without adding to codestyle agreements.
 
@@ -40,14 +39,14 @@ If you can't find valid, add new to codestyle agreements please. Other can be us
 
 ### Guideline
 
-- `init:` - used to start a project. Examples:
+- `init:` - used to start a project or task. Examples:
     
     ```
     init: start youtube-task
     init: start mentor-dashboard task
     ```
     
-- `feat:` - this is the implemented new functionality from the terms of reference (added zoom support, added footer, added a product card). Examples:
+- `feat:` - describes implementing new functionality from the terms of reference (added zoom support, added footer, added a product card). Examples:
     
     ```
     feat: add basic page layout
@@ -61,7 +60,7 @@ If you can't find valid, add new to codestyle agreements please. Other can be us
     feat: add real social icons
     ```
     
-- `fix:` - fixed a bug in previously implemented functionality. Examples:
+- `fix:` - describes fixing a bug in previously implemented functionality. Examples:
     
     ```
     fix: implement correct loading data from youtube
