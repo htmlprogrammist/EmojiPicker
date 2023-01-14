@@ -144,16 +144,6 @@ Feedback generator style. To turn off, set `nil` to this parameter. The default 
 viewController.feedbackGeneratorStyle = .soft
 ```
 
-## To Do
-
-- [x] The main functionality for choosing emojis
-- [x] Dark mode
-- [x] Segmented control for jumping an emoji section
-- [x] Automatic adjustment of the relevant set of emoji for the iOS version
-- [ ] Select skin tones from popup
-- [ ] Search bar and search results
-- [ ] Recently used
-
 ## Localization
 
 * English 🇬🇧
@@ -162,3 +152,12 @@ viewController.feedbackGeneratorStyle = .soft
 * French 🇫🇷
 * German 🇩🇪
 * Hindi 🇮🇳
+
+## Experiments
+
+You can also try to play around with the project, see how it works or redo it for yourself and immediately see the result by opening the `EmojiPicker.xcworkspace` file from `Example/` directory:
+
+1. Open `EmojiPicker.xcworkspace` file
+2. Expand `Pods` target
+3. Expand `Development Pods` and `EmojiPicker` directory
+4. Have fun!
