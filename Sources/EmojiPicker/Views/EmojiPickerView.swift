@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2022 Egor Badmaev
+// Copyright © 2022 Ivan Izyumkin
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -76,21 +76,12 @@ final class EmojiPickerView: UIView {
         return bounds.width * 0.13
     }
     
-    // MARK: - Init
-
-    init() {
-        super.init(frame: .zero)
-        
-        setupCategoryViews()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    // MARK: - Override
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         
+        setupCategoryViews()
         setupView()
     }
     
@@ -137,14 +128,15 @@ final class EmojiPickerView: UIView {
                 categoryIndex: categoryIndex,
                 selectedEmojiCategoryTintColor: selectedEmojiCategoryTintColor
             )
-            // Installing selected state for first categoryView
+            
+            /// We need to set _selected_ state for the first category (default at the start).
             categoryView.updateCategoryViewState(selectedCategoryIndex: 0)
             categoryViews.append(categoryView)
             categoriesStackView.addArrangedSubview(categoryView)
         }
     }
     
-    /// Scrolls collectionView to header for selected category.
+    /// Scrolls collection view to the header of selected category.
     ///
     /// - Parameter section: Selected category index.
     private func scrollToHeader(for section: Int) {
