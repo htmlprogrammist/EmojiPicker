@@ -16,7 +16,7 @@
 
 /* Begin PBXFileReference section */
 		028AB9FF7F7146CA02C6047E /* Pods-EmojiPicker_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiPicker_Example.debug.xcconfig"; path = "Target Support Files/Pods-EmojiPicker_Example/Pods-EmojiPicker_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		39C5556144E64B4781AC3E2C /* EmojiPicker.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = EmojiPicker.podspec; path = ../EmojiPicker.podspec; sourceTree = "<group>"; };
+		39C5556144E64B4781AC3E2C /* EmojiPicker.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = EmojiPicker.podspec; path = ../EmojiPicker.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4E7BA306C8344910609AD79B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		52C75966261C87A105AE3101 /* Pods_EmojiPicker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmojiPicker_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* EmojiPicker_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmojiPicker_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
