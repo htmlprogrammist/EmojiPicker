@@ -32,13 +32,13 @@ public protocol EmojiPickerDelegate: AnyObject {
 /// Emoji Picker view controller. 
 public final class EmojiPickerViewController: UIViewController {
     
-    // MARK: - Internal Properties
+    // MARK: - Public Properties
     
     /// Delegate for selecting an emoji object.
-    weak var delegate: EmojiPickerDelegate?
+    public weak var delegate: EmojiPickerDelegate?
     
     /// The view containing the anchor rectangle for the popover.
-    var sourceView: UIView? {
+    public var sourceView: UIView? {
         didSet {
             popoverPresentationController?.sourceView = sourceView
         }
@@ -49,7 +49,7 @@ public final class EmojiPickerViewController: UIViewController {
      
      - Note: The default value of this property is `.up`.
      */
-    let arrowDirection: PickerArrowDirectionMode
+    public var arrowDirection: PickerArrowDirectionMode = .up
     
     /**
      Custom height for EmojiPicker.
@@ -57,14 +57,14 @@ public final class EmojiPickerViewController: UIViewController {
      - Note: The default value of this property is `nil`.
      - Important: it will be limited by the distance from `sourceView.origin.y` to the upper or lower bound(depends on `permittedArrowDirections`).
      */
-    let customHeight: CGFloat?
+    public var customHeight: CGFloat?
     
     /**
      Inset from the sourceView border.
      
      - Note: The default value of this property is `0`.
      */
-    let horizontalInset: CGFloat
+    public var horizontalInset: CGFloat = 0
     
     /**
      A boolean value that determines whether the screen will be hidden after the emoji is selected.
@@ -74,14 +74,14 @@ public final class EmojiPickerViewController: UIViewController {
      
      - Note: The default value of this property is `true`.
      */
-    let isDismissedAfterChoosing: Bool
+    public var isDismissedAfterChoosing: Bool = true
     
     /**
      Color for the selected emoji category.
      
      - Note: The default value of this property is `.systemBlue`.
      */
-    var selectedEmojiCategoryTintColor: UIColor? {
+    public var selectedEmojiCategoryTintColor: UIColor? = .systemBlue {
         didSet {
             guard let selectedEmojiCategoryTintColor = selectedEmojiCategoryTintColor else { return }
             emojiPickerView.selectedEmojiCategoryTintColor = selectedEmojiCategoryTintColor
@@ -93,7 +93,7 @@ public final class EmojiPickerViewController: UIViewController {
      
      - Note: The default value of this property is `.light`.
      */
-    var feedbackGeneratorStyle: UIImpactFeedbackGenerator.FeedbackStyle? {
+    public var feedbackGeneratorStyle: UIImpactFeedbackGenerator.FeedbackStyle? {
         didSet {
             guard let feedBackGeneratorStyle = feedbackGeneratorStyle else {
                 feedbackGenerator = nil
@@ -115,21 +115,12 @@ public final class EmojiPickerViewController: UIViewController {
     // MARK: - Init
     
     /// Creates EmojiPicker view controller with provided configuration.
-    public init(configuration: Configuration) {
-        arrowDirection = configuration.arrowDirection
-        selectedEmojiCategoryTintColor = configuration.selectedEmojiCategoryTintColor
-        horizontalInset = configuration.horizontalInset
-        isDismissedAfterChoosing = configuration.isDismissedAfterChoosing
-        customHeight = configuration.customHeight
-        feedbackGeneratorStyle = configuration.feedbackGeneratorStyle
-        
+    public init() {
         let unicodeManager = UnicodeManager()
         viewModel = EmojiPickerViewModel(unicodeManager: unicodeManager)
         
         super.init(nibName: nil, bundle: nil)
-        
-        delegate = configuration.delegate
-        sourceView = configuration.sender
+        modalPresentationStyle = .popover
         
         setupDelegates()
         bindViewModel()
@@ -147,8 +138,6 @@ public final class EmojiPickerViewController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        
-        modalPresentationStyle = .popover
         
         setupPreferredContentSize()
         setupArrowDirections()

@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/htmlprogrammist/EmojiPicker",
       "state" : {
-        "revision" : "1da3bd085ab76e949fe695ea9a06a032e7b21b3c",
-        "version" : "2.1.2"
+        "revision" : "65e77d87dd314aa5580189dae9811be414acc931",
+        "version" : "2.1.3"
       }
     }
   ],
