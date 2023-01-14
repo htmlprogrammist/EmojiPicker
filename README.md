@@ -7,6 +7,24 @@ Emoji picker for iOS like on macOS
 <img src="https://user-images.githubusercontent.com/50948518/171909950-ebf388f3-83a1-4b63-ad54-f58ba947e3bb.png" width="230">
 </p>
 
+## Navigate
+
+- [Installation](#installation)
+    - [Swift Package Manager](#swift-package-manager)
+    - [CocoaPods](#cocoapods)
+    - [Manually](#manually)
+- [Quick Start](#quick-start)
+- [Usage](#usage)
+    - [Required parameters](#required-parameters)
+    - [Selected emoji category tint color](#selected-emoji-category-tint-color)
+    - [Arrow direction](#arrow-direction)
+    - [Horizontal inset](#horizontal-inset)
+    - [Is dismiss after choosing](#is-dismiss-after-choosing)
+    - [Custom height](#custom-height)
+    - [Feedback generator style](#feedback-generator-style)
+- [To do](#to-do)
+- [Localizations](#localizations)
+
 ## Installation
 
 Ready for use with Swift 4.2+ on iOS 11.1+
