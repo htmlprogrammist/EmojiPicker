@@ -37,7 +37,7 @@ Once you have your Swift package set up, adding as a dependency is as easy as ad
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/htmlprogrammist/EmojiPicker", .upToNextMajor(from: "2.1.1"))
+    .package(url: "https://github.com/htmlprogrammist/EmojiPicker", .upToNextMajor(from: "3.0.0"))
 ]
 ```
 
@@ -59,8 +59,9 @@ Create `UIButton` and add selector as action:
 
 ```swift
 @objc private func openEmojiPickerModule(sender: UIButton) {
-    let configuration = Configuration(delegate: self, sender: sender)
-    let viewController = EmojiPickerViewController(configuration: configuration)
+    let viewController = EmojiPickerViewController()
+    viewController.delegate = self
+    viewController.sourceView = sender
     present(viewController, animated: true)
 }
 ```
@@ -77,11 +78,21 @@ extension ViewController: EmojiPickerDelegate {
 
 ## Usage
 
-### Required parameters
+### Delegate
 
-- `delegate`: delegate for EmojiPicker to provide chosen emoji. 
+Delegate for EmojiPicker to provide chosen emoji.
 
-- `sender`: a view containing the anchor rectangle for the popover. You can create any `UIView` instances and set them as the `sender`.
+```swift
+viewController.delegate = self
+```
+
+### Source View
+
+A view containing the anchor rectangle for the popover. You can create any `UIView` instances and set them as the `sender`.
+
+```swift
+viewController.sourceView = sender
+```
 
 Also, there is way more settings for configuration:
 
@@ -90,7 +101,7 @@ Also, there is way more settings for configuration:
 Color for the selected emoji category. The default value of this property is `.systemBlue`.
 
 ```swift
-configuration.selectedEmojiCategoryTintColor = .systemRed
+viewController.selectedEmojiCategoryTintColor = .systemRed
 ```
 
 ### Arrow direction
@@ -98,7 +109,7 @@ configuration.selectedEmojiCategoryTintColor = .systemRed
 The direction of the arrow for EmojiPicker. The default value of this property is `.up`.
 
 ```swift
-configuration.arrowDirection = .up
+viewController.arrowDirection = .up
 ```
 
 ### Horizontal inset
@@ -106,7 +117,7 @@ configuration.arrowDirection = .up
 Inset from the `sourceView` border. The default value of this property is `0`.
 
 ```swift
-configuration.horizontalInset = 0
+viewController.horizontalInset = 0
 ```
 
 ### Is dismiss after choosing
@@ -114,7 +125,7 @@ configuration.horizontalInset = 0
 Defines whether to dismiss emoji picker or not after choosing. The default value of this property is `true`.
 
 ```swift
-configuration.isDismissAfterChoosing = true
+viewController.isDismissAfterChoosing = true
 ```
 
 ### Custom height
@@ -122,7 +133,7 @@ configuration.isDismissAfterChoosing = true
 Custom height for EmojiPicker. The default value of this property is `nil`.
 
 ```swift
-configuration.customHeight = 300
+viewController.customHeight = 300
 ```
 
 ### Feedback generator style
@@ -130,7 +141,7 @@ configuration.customHeight = 300
 Feedback generator style. To turn off, set `nil` to this parameter. The default value of this property is `.light`.
 
 ```swift
-configuration.feedbackGeneratorStyle = .soft
+viewController.feedbackGeneratorStyle = .soft
 ```
 
 ## To Do
