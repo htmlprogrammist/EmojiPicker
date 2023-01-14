@@ -54,16 +54,16 @@ final class EmojiPickerView: UIView {
 
     private let separatorView: UIView = {
         let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .separatorColor
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     private let categoriesStackView: UIStackView = {
         let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.backgroundColor = .popoverBackgroundColor
         stackView.distribution = .fillEqually
+        stackView.backgroundColor = .popoverBackgroundColor
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
     
@@ -143,7 +143,9 @@ final class EmojiPickerView: UIView {
         guard let cellFrame = collectionView.collectionViewLayout.layoutAttributesForItem(at: IndexPath(item: 0, section: section))?.frame,
               let headerFrame = collectionView.collectionViewLayout.layoutAttributesForSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, at: IndexPath(item: 0, section: section))?.frame
         else { return }
-        collectionView.setContentOffset(CGPoint(x:  -collectionView.contentInset.left, y: cellFrame.minY - headerFrame.height), animated: false)
+        
+        let offset = CGPoint(x: -collectionView.contentInset.left, y: cellFrame.minY - headerFrame.height)
+        collectionView.setContentOffset(offset, animated: false)
     }
 }
 

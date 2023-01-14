@@ -22,8 +22,8 @@ Emoji picker for iOS like on macOS
     - [Is dismiss after choosing](#is-dismiss-after-choosing)
     - [Custom height](#custom-height)
     - [Feedback generator style](#feedback-generator-style)
-- [To do](#to-do)
 - [Localizations](#localizations)
+- [Experiments](#experiments)
 
 ## Installation
 
@@ -156,9 +156,11 @@ viewController.feedbackGeneratorStyle = .soft
 
 ## Experiments
 
-You can also try to play around with the project, see how it works or redo it for yourself and immediately see the result by opening the `EmojiPicker.xcworkspace` file from `Example/` directory:
+You can also play around with the project, see how it works or adapt it for yourself and immediately see the result:
 
+1. Clone or fork this repository to yourself
 1. Open `EmojiPicker.xcworkspace` file
 2. Expand `Pods` target
-3. Expand `Development Pods` and `EmojiPicker` directory
-4. Have fun!
+3. Expand `Development Pods` and `EmojiPicker` directory (here you can make changes)
+4. Make sure you have set `EmojiPicker-Example` as target for a run 
+5. Have fun! Build & run the project
