@@ -45,7 +45,8 @@ class ConfigurationTests: XCTestCase {
                                       horizontalInset: horizontalInset,
                                       isDismissAfterChoosing: isDismissAfterChoosing,
                                       customHeight: customHeight,
-                                      feedbackGeneratorStyle: feedbackGeneratorStyle)
+                                      feedbackGeneratorStyle: feedbackGeneratorStyle
+        )
         
         XCTAssertEqual(configuration.selectedEmojiCategoryTintColor, selectedEmojiCategoryTintColor)
         XCTAssertEqual(configuration.arrowDirection, arrowDirection)
