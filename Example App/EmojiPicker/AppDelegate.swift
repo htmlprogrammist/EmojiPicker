@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  EmojiPicker
 //
-//  Created by htmlprogrammist on 01/14/2023.
-//  Copyright (c) 2023 htmlprogrammist. All rights reserved.
+//  Created by Егор Бадмаев on 14.01.2023.
+//  Copyright (c) 2023 Егор Бадмаев. All rights reserved.
 //
 
 import UIKit

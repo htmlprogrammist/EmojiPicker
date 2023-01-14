@@ -1,16 +1,15 @@
 {
   "name": "EmojiPicker",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "license": "MIT",
   "summary": "Emoji picker for iOS like on MacOS",
   "homepage": "https://github.com/htmlprogrammist/EmojiPicker",
   "authors": {
-    "Ivan Izyumkin": "izzyumkin@gmail.com",
     "Egor Badmaev": "eg.badmaev@gmail.com"
   },
   "source": {
     "git": "https://github.com/htmlprogrammist/EmojiPicker.git",
-    "tag": "3.0.1"
+    "tag": "3.0.2"
   },
   "source_files": "Sources/EmojiPicker/**/*.{swift}",
   "resource_bundles": {
@@ -26,7 +25,7 @@
     {
       "name": "Tests",
       "test_type": "unit",
-      "source_files": "Tests/**/*.{swift}"
+      "source_files": "Tests/EmojiPickerTests/**/*.{swift}"
     }
   ],
   "swift_version": "4.2"
