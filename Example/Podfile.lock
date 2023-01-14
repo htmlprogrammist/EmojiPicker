@@ -1,0 +1,18 @@
+PODS:
+  - EmojiPicker (3.0.1)
+  - EmojiPicker/Tests (3.0.1)
+
+DEPENDENCIES:
+  - EmojiPicker (from `../`)
+  - EmojiPicker/Tests (from `../`)
+
+EXTERNAL SOURCES:
+  EmojiPicker:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  EmojiPicker: c53373d551a587fef91da2d058134366e3cf293e
+
+PODFILE CHECKSUM: e686a8fbd8a5367eac0bf7fb77e0bbddf18a2353
+
+COCOAPODS: 1.11.3

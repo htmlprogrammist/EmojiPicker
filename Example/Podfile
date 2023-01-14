@@ -1,0 +1,7 @@
+use_frameworks!
+
+platform :ios, '11.1'
+
+target 'EmojiPicker_Example' do
+  pod 'EmojiPicker', :path => '../', :testspecs => ['Tests']
+end
