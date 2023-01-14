@@ -125,7 +125,7 @@ viewController.horizontalInset = 0
 Defines whether to dismiss emoji picker or not after choosing. The default value of this property is `true`.
 
 ```swift
-viewController.isDismissAfterChoosing = true
+viewController.isDismissedAfterChoosing = true
 ```
 
 ### Custom height
@@ -151,7 +151,7 @@ viewController.feedbackGeneratorStyle = .soft
 - [x] Segmented control for jumping an emoji section
 - [x] Automatic adjustment of the relevant set of emoji for the iOS version
 - [ ] Select skin tones from popup
-- [ ] Seach bar and search results
+- [ ] Search bar and search results
 - [ ] Recently used
 
 ## Localization
