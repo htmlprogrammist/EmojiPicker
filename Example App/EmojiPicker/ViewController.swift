@@ -34,7 +34,12 @@ class ViewController: UIViewController {
     }
     
     private func setupView() {
-        view.backgroundColor = .white
+        if #available(iOS 13.0, *) {
+            view.backgroundColor = .systemBackground
+        } else {
+            view.backgroundColor = .white
+        }
+        
         view.addSubview(emojiButton)
         
         NSLayoutConstraint.activate([
