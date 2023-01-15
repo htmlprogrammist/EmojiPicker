@@ -1,6 +1,6 @@
 {
   "name": "EmojiPicker",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "license": "MIT",
   "summary": "Emoji picker for iOS like on MacOS",
   "homepage": "https://github.com/htmlprogrammist/EmojiPicker",
@@ -9,7 +9,7 @@
   },
   "source": {
     "git": "https://github.com/htmlprogrammist/EmojiPicker.git",
-    "tag": "3.0.3"
+    "tag": "3.0.4"
   },
   "source_files": "Sources/EmojiPicker/**/*.{swift}",
   "resource_bundles": {
