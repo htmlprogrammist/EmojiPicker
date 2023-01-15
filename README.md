@@ -33,6 +33,12 @@ Ready for use with Swift 4.2+ on iOS 11.1+
 
 The [Swift Package Manager](https://www.swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into the `swift` compiler. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies.
 
+In Xcode navigate to File → Swift Packages → Add Package Dependency…. Use this URL to add the dependency:
+
+```
+‌https://github.com/htmlprogrammist/EmojiPicker
+```
+
 Once you have your Swift package set up, adding as a dependency is as easy as adding it to the `dependencies` value of your `Package.swift`.
 
 ```swift
