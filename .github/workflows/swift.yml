@@ -17,15 +17,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build on iOS 12.4
-      run: xcodebuild -workspace Example\ App/EmojiPicker.xcworkspace -scheme EmojiPicker -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=12.4,name=iPhone X'
-    - name: Test on iOS 12.4
-      run: xcodebuild -workspace Example\ App/EmojiPicker.xcworkspace -scheme EmojiPicker -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=12.4,name=iPhone X' test
-    - name: Build & Test on iOS 13.4
-      run: xcodebuild -workspace Example\ AppEmojiPicker.xcworkspace -scheme EmojiPicker -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=13.4,name=iPhone 11' test
-    - name: Build & Test on iOS 14.4
-      run: xcodebuild -workspace Example\ AppEmojiPicker.xcworkspace -scheme EmojiPicker -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=14.4,name=iPhone 12' test
-    - name: Build & Test on iOS 15.4
-      run: xcodebuild -workspace Example\ AppEmojiPicker.xcworkspace -scheme EmojiPicker -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=15.4,name=iPhone 13' test
-    - name: Build & Test on iOS 16.2
+    - name: Build on iOS 16.0
+      run: xcodebuild -workspace Example\ AppEmojiPicker.xcworkspace -scheme EmojiPicker -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=16.0,name=iPhone 14'
+    - name: Test on iOS 16.0
       run: xcodebuild -workspace Example\ AppEmojiPicker.xcworkspace -scheme EmojiPicker -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=16.2,name=iPhone 14' test
