@@ -1,6 +1,6 @@
 PODS:
-  - EmojiPicker (3.0.2)
-  - EmojiPicker/Tests (3.0.2)
+  - EmojiPicker (3.0.4)
+  - EmojiPicker/Tests (3.0.4)
 
 DEPENDENCIES:
   - EmojiPicker (from `../`)
@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  EmojiPicker: a269cede9fb45ece0a181a2e1d06b9c874fe4484
+  EmojiPicker: 4b34979fe8adbe0c59a210c3d1bff3223ca4cdfb
 
 PODFILE CHECKSUM: e686a8fbd8a5367eac0bf7fb77e0bbddf18a2353
 
