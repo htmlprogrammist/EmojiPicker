@@ -19,11 +19,12 @@ Emoji picker for iOS like on macOS
     - [Selected emoji category tint color](#selected-emoji-category-tint-color)
     - [Arrow direction](#arrow-direction)
     - [Horizontal inset](#horizontal-inset)
-    - [Is dismiss after choosing](#is-dismiss-after-choosing)
+    - [Is dismissed after choosing](#is-dismissed-after-choosing)
     - [Custom height](#custom-height)
     - [Feedback generator style](#feedback-generator-style)
 - [Localizations](#localizations)
-- [Experiments](#experiments)
+- [Contributing](#contributing)
+- [Getting started](#getting-started)
 
 ## Installation
 
@@ -33,7 +34,7 @@ Ready for use with Swift 4.2+ on iOS 11.1+
 
 The [Swift Package Manager](https://www.swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into the `swift` compiler. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies.
 
-In Xcode navigate to File → Swift Packages → Add Package Dependency…. Use this URL to add the dependency:
+In Xcode navigate to File → Swift Packages → Add Package Dependency. Use this URL to add the dependency:
 
 ```
 ‌https://github.com/htmlprogrammist/EmojiPicker
@@ -126,7 +127,7 @@ Inset from the `sourceView` border. The default value of this property is `0`.
 viewController.horizontalInset = 0
 ```
 
-### Is dismiss after choosing
+### Is dismissed after choosing
 
 Defines whether to dismiss emoji picker or not after choosing. The default value of this property is `true`.
 
@@ -160,13 +161,23 @@ viewController.feedbackGeneratorStyle = .soft
 * Hindi 🇮🇳
 * Turkish 🇹🇷
 
-## Experiments
+You can also contribute your language to this list. Please, read [following heading](#contributing) for more information.
 
-You can also play around with the project, see how it works or adapt it for yourself and immediately see the result:
+## Contributing
+
+Contributions are welcomed and encouraged! Please see the [Contributing guide](https://github.com/htmlprogrammist/EmojiPicker/blob/main/CONTRIBUTING.md).
+
+To be a truly great community, we need to welcome developers from all walks of life, with different backgrounds, and with a wide range of experience. A diverse and friendly community will have more great ideas, more unique perspectives, and produce more great code. We will work diligently to make our community welcoming to everyone.
+
+To give clarity of what is expected of our members, we have adopted the code of conduct defined by the Contributor Covenant. This document is used across many open source communities, and we think it articulates our values well. For more, see the [Code of Conduct](https://github.com/htmlprogrammist/EmojiPicker/blob/main/CODE_OF_CONDUCT.md).
+
+## Getting started
+
+To play around with the project, contribute to it, see how it works or adapt it for yourself:
 
 1. Clone or fork this repository to yourself
-1. Open `EmojiPicker.xcworkspace` file
-2. Expand `Pods` target
-3. Expand `Development Pods` and `EmojiPicker` directory (here you can make changes)
-4. Make sure you have set `EmojiPicker-Example` as target for a run 
-5. Have fun! Build & run the project
+2. Open `Example App/EmojiPicker.xcworkspace` file
+3. Expand `Pods` target
+4. Expand `Development Pods` and `EmojiPicker` directories
+  Here you can make your changes.
+5. Build & Run project to see an immediate result on an example application. Have fun!
