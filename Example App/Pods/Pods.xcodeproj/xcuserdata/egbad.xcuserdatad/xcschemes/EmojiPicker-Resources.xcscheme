@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8888BFDF07041C2C83A7B79D4118BDEA"
-               BuildableName = "EmojiPicker.bundle"
-               BlueprintName = "EmojiPicker-EmojiPicker"
+               BlueprintIdentifier = "3DA7DB1A9F7F32C07F0F0F8CD7CCD936"
+               BuildableName = "Resources.bundle"
+               BlueprintName = "EmojiPicker-Resources"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
