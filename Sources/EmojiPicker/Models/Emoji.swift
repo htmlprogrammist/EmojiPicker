@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2022 Ivan Izyumkin
+// Copyright © 2022 Egor Badmaev
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -19,21 +19,39 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import Foundation
-
-/// We don't want `Bundle.module` that is being generated automatically for Swift Package to be overriden by our property.
-#if !SWIFT_PACKAGE
-extension Bundle {
-    /**
-     Resources bundle.
-     
-     Since CocoaPods resources bundle is something other than SPM's `Bundle.module`, we need to create it.
-     
-     - Note: It was named same as for Swift Package to simplify usage.
-     */
-    static var module: Bundle {
-        let path = Bundle(for: UnicodeManager.self).path(forResource: "Resources", ofType: "bundle") ?? ""
-        return Bundle(path: path) ?? Bundle.main
-    }
+struct EmojiSet: Decodable {
+    let categories: [Category]
+    let emojis: [String: Emoji]
+    let aliases: [String: String]
+    let sheet: Sheet
 }
-#endif
+
+// MARK: - Category
+
+struct Category: Decodable {
+    let id: String
+    let emojis: [String]
+}
+
+// MARK: - Emoji
+
+struct Emoji: Decodable {
+    let id, name: String
+    let keywords: [String]
+    let skins: [Skin]
+    let version: Double
+    let emoticons: [String]?
+}
+
+// MARK: - Skin
+
+struct Skin: Decodable {
+    let unified, native: String
+    let x, y: Int
+}
+
+// MARK: - Sheet
+
+struct Sheet: Decodable {
+    let cols, rows: Int
+}
