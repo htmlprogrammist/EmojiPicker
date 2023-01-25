@@ -24,7 +24,7 @@ import UIKit.UIDevice
 protocol EmojiManagerProtocol {
     
     /// Operating System version of a device.
-    var currentVersion: Double { get }
+    var deviceVersion: Double { get }
     
     /// Gets version of iOS for current device.
     ///
@@ -35,54 +35,58 @@ protocol EmojiManagerProtocol {
 /// The class is responsible for getting a relevant set of emojis for iOS version.
 final class EmojiManager: EmojiManagerProtocol {
     
+    // MARK: - Private
+    
+    private let decoder = JSONDecoder()
+    /// Version of emoji set.
+    ///
+    /// - Note: The value is `5` by default.
+    private var emojiVersion = "5"
+    
     // MARK: - Internal
     
-    var currentVersion: Double {
+    var deviceVersion: Double {
         return (UIDevice.current.systemVersion as NSString).doubleValue
     }
     
     func provideEmojis() -> EmojiSet {
-        switch currentVersion {
-        case 12.1...13.1:
-            break
-        case 13.2...14.1:
-            break
-        case 14.2...14.4:
-            break
-        case 14.5...15.3:
-            break
-        case 15.4...:
-            break
-        default:
-            break
+        setEmojiVersion()
+        
+        guard let path = Bundle.module.path(forResource: emojiVersion, ofType: "json"),
+              let data = try? Data(contentsOf: URL(fileURLWithPath: path))
+        else {
+            fatalError("Could not get data from \"\(emojiVersion).json\" file")
         }
-        return EmojiSet(categories: [], emojis: [:], aliases: [:], sheet: Sheet(cols: 0, rows: 0))
+        
+        guard let emojiSet = try? decoder.decode(EmojiSet.self, from: data)
+        else {
+            fatalError("Could not get emoji set from data: \(data)")
+        }
+        
+        return emojiSet
     }
     
     // MARK: - Private Methods
     
-    /// Returns a localized name for the emoji category.
-    ///
-    /// - Parameter type: Emoji category type.
-    /// - Returns: Name of the category.
-    private func getEmojiCategoryTitle(for type: EmojiCategoryType) -> String {
-        switch type {
-        case .people:
-            return NSLocalizedString("emotionsAndPeople", bundle: .module, comment: "")
-        case .nature:
-            return NSLocalizedString("animalsAndNature", bundle: .module, comment: "")
-        case .foodAndDrink:
-            return NSLocalizedString("foodAndDrinks", bundle: .module, comment: "")
-        case .activity:
-            return NSLocalizedString("activities", bundle: .module, comment: "")
-        case .travelAndPlaces:
-            return NSLocalizedString("travellingAndPlaces", bundle: .module, comment: "")
-        case .objects:
-            return NSLocalizedString("objects", bundle: .module, comment: "")
-        case .symbols:
-            return NSLocalizedString("symbols", bundle: .module, comment: "")
-        case .flags:
-            return NSLocalizedString("flags", bundle: .module, comment: "")
+    private func setEmojiVersion() {
+        switch deviceVersion {
+        case 12.1...13.1:
+            emojiVersion = "11"
+            
+        case 13.2...14.1:
+            emojiVersion = "12"
+            
+        case 14.2...14.4:
+            emojiVersion = "13"
+            
+        case 14.5...15.3:
+            emojiVersion = "13.1"
+            
+        case 15.4...:
+            emojiVersion = "14"
+            
+        default:
+            emojiVersion = "5"
         }
     }
 }

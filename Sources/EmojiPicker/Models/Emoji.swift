@@ -19,39 +19,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-struct EmojiSet: Decodable {
-    let categories: [Category]
-    let emojis: [String: Emoji]
-    let aliases: [String: String]
-    let sheet: Sheet
-}
-
-// MARK: - Category
-
-struct Category: Decodable {
-    let id: String
-    let emojis: [String]
-}
-
-// MARK: - Emoji
-
 struct Emoji: Decodable {
     let id, name: String
     let keywords: [String]
     let skins: [Skin]
     let version: Double
     let emoticons: [String]?
-}
-
-// MARK: - Skin
-
-struct Skin: Decodable {
-    let unified, native: String
-    let x, y: Int
-}
-
-// MARK: - Sheet
-
-struct Sheet: Decodable {
-    let cols, rows: Int
 }

@@ -34,7 +34,7 @@ final class EmojiCategoryIconView: UIView {
     // MARK: - Private Properties
     
     /// Target icon type.
-    private var type: EmojiCategoryType
+    private var type: CategoryType
     /// Current tint color for the icon.
     private var currentIconTintColor: UIColor = .systemGray
     /// Selected tint color for the icon.
@@ -44,7 +44,7 @@ final class EmojiCategoryIconView: UIView {
     
     // MARK: - Init
     
-    init(type: EmojiCategoryType,
+    init(type: CategoryType,
          selectedIconTintColor: UIColor
     ) {
         self.type = type
@@ -96,11 +96,11 @@ extension EmojiCategoryIconView {
             CategoryIconsDrawKit.drawPeopleCategory(frame: rect, tintColor: currentIconTintColor)
         case .nature:
             CategoryIconsDrawKit.drawNatureCategory(frame: rect, tintColor: currentIconTintColor)
-        case .foodAndDrink:
+        case .foods:
             CategoryIconsDrawKit.drawFoodAndDrinkCategory(frame: rect, tintColor: currentIconTintColor)
         case .activity:
             CategoryIconsDrawKit.drawActivityCategory(frame: rect, tintColor: currentIconTintColor)
-        case .travelAndPlaces:
+        case .places:
             CategoryIconsDrawKit.drawTravelAndPlacesCategory(frame: rect, tintColor: currentIconTintColor)
         case .objects:
             CategoryIconsDrawKit.drawObjectsCategory(frame: rect, tintColor: currentIconTintColor)

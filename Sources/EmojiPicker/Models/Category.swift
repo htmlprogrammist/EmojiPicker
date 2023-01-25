@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2022 Ivan Izyumkin
+// Copyright © 2022 Egor Badmaev
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -19,20 +19,19 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+struct Category: Decodable {
+    let id: CategoryType
+    let emojis: [String]
+}
+
 /// Describes types of emoji categories.
-enum EmojiCategoryType: Int {
+enum CategoryType: String, Decodable, CaseIterable {
     case people
     case nature
-    case foodAndDrink
+    case foods
     case activity
-    case travelAndPlaces
+    case places
     case objects
     case symbols
     case flags
-}
-
-/// Describes emoji categories.
-struct EmojiCategory {
-    let categoryName: String
-    let emojis: [[Int]]
 }
