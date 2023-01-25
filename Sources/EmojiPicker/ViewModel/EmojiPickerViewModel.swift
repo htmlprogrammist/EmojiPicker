@@ -75,7 +75,7 @@ final class EmojiPickerViewModel: EmojiPickerViewModelProtocol {
     
     func sectionHeaderViewModel(for section: Int) -> String {
         return NSLocalizedString(
-            emojiSet.categories[section].id.rawValue,
+            emojiSet.categories[section].type.rawValue,
             bundle: .module,
             comment: ""
         )

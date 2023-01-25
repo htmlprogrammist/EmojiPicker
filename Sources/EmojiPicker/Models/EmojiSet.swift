@@ -19,8 +19,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+/// An object that represents set of emojis.
 struct EmojiSet: Decodable {
+    /// Emoji categories.
     let categories: [Category]
+    /// Emojis dictionary. Key is the name (id) of emoji.
     let emojis: [String: Emoji]
+    /// Aliases of keywords for emojis.
     let aliases: [String: String]
 }

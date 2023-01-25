@@ -19,12 +19,20 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+/// An object that represents category of emojis.
 struct Category: Decodable {
-    let id: CategoryType
+    /// Type-safe category type.
+    let type: CategoryType
+    /// Identifiers of emojis.
     let emojis: [String]
+    
+    enum CodingKeys: String, CodingKey {
+        case type = "id"
+        case emojis
+    }
 }
 
-/// Describes types of emoji categories.
+/// Type-safe representation of emoji categories.
 enum CategoryType: String, Decodable, CaseIterable {
     case people
     case nature

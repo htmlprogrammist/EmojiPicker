@@ -19,10 +19,16 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+/// An object that represents emoji.
 struct Emoji: Decodable {
-    let id, name: String
+    /// Emoji identifier.
+    let id: String
+    /// Name of an emoji.
+    let name: String
+    /// Keywords for an emoji.
     let keywords: [String]
+    /// Skin tones.
     let skins: [Skin]
+    /// Version in which the emoji appeared.
     let version: Double
-    let emoticons: [String]?
 }
