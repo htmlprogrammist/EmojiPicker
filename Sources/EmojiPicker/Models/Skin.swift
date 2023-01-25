@@ -19,7 +19,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+/// An object that represents skin tones for emojis.
 struct Skin: Decodable {
+    /// Unicode.
     let unified: String
+    /// Emoji as symbol. For example: 😄
     let native: String
 }
