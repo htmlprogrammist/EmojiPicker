@@ -122,10 +122,12 @@ final class EmojiPickerView: UIView {
     }
     
     private func setupCategoryViews() {
-        for categoryIndex in 0...7 {
+        var index = 0
+        for type in CategoryType.allCases {
             let categoryView = TouchableEmojiCategoryView(
                 delegate: self,
-                categoryIndex: categoryIndex,
+                categoryIndex: index,
+                categoryType: type,
                 selectedEmojiCategoryTintColor: selectedEmojiCategoryTintColor
             )
             
@@ -133,6 +135,7 @@ final class EmojiPickerView: UIView {
             categoryView.updateCategoryViewState(selectedCategoryIndex: 0)
             categoryViews.append(categoryView)
             categoriesStackView.addArrangedSubview(categoryView)
+            index += 1
         }
     }
     
