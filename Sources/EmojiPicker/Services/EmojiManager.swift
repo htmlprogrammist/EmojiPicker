@@ -74,7 +74,7 @@ final class EmojiManager: EmojiManagerProtocol {
             emojiVersion = "11"
             
         case 13.2...14.1:
-            emojiVersion = "12"
+            emojiVersion = "12.1"
             
         case 14.2...14.4:
             emojiVersion = "13"
