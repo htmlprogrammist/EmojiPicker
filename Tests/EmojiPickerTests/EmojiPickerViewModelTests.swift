@@ -10,18 +10,18 @@ import XCTest
 
 class EmojiPickerViewModelTests: XCTestCase {
     
-    var unicodeManagerStub: UnicodeManagerStub!
+    var emojiManagerStub: EmojiManagerStub!
     /// SUT.
     var viewModel: EmojiPickerViewModel!
     
     override func setUpWithError() throws {
-        unicodeManagerStub = UnicodeManagerStub()
-        viewModel = EmojiPickerViewModel(unicodeManager: unicodeManagerStub)
+        emojiManagerStub = EmojiManagerStub()
+        viewModel = EmojiPickerViewModel(emojiManager: emojiManagerStub)
     }
     
     override func tearDownWithError() throws {
         viewModel = nil
-        unicodeManagerStub = nil
+        emojiManagerStub = nil
     }
     
     /// Tests default values for selected emoji.
@@ -33,7 +33,7 @@ class EmojiPickerViewModelTests: XCTestCase {
     func testNumberOfSectionsMethod() throws {
         let result = viewModel.numberOfSections()
         
-        XCTAssertEqual(result, unicodeManagerStub.emojiCategories.count)
+        XCTAssertEqual(result, emojiManagerStub.emojiSet.categories.count)
     }
     
     func testNumberOfItemsMethod() throws {
@@ -41,16 +41,23 @@ class EmojiPickerViewModelTests: XCTestCase {
         
         let result = viewModel.numberOfItems(in: 0)
         
-        XCTAssertEqual(result, unicodeManagerStub.emojiCategories[section].emojis.count)
+        XCTAssertEqual(result, emojiManagerStub.emojiSet.categories[section].emojis.count)
     }
     
     func testEmojiAtIndexPathMethod() throws {
-        let indexPath = IndexPath(row: 1, section: 1)
+        let indexPath = IndexPath(row: 1, section: 0)
         
         let result = viewModel.emoji(at: indexPath)
         
-        XCTAssertEqual(result,
-                       unicodeManagerStub.emojiCategories[indexPath.section].emojis[indexPath.row].emoji())
+        let expectedResult = emojiManagerStub.emojiSet.emojis[
+            emojiManagerStub.emojiSet.categories[indexPath.section].emojis[indexPath.row]
+        ]?
+            .skins[0]
+            .native
+        XCTAssertEqual(
+            result,
+            expectedResult
+        )
     }
     
     func testSectionHeaderViewModelMethod() throws {
@@ -58,6 +65,11 @@ class EmojiPickerViewModelTests: XCTestCase {
         
         let result = viewModel.sectionHeaderViewModel(for: section)
         
-        XCTAssertEqual(result, unicodeManagerStub.emojiCategories[section].categoryName)
+        let expectedResult = NSLocalizedString(
+            emojiManagerStub.emojiSet.categories[section].type.rawValue,
+            bundle: .module,
+            comment: ""
+        )
+        XCTAssertEqual(result, expectedResult)
     }
 }
