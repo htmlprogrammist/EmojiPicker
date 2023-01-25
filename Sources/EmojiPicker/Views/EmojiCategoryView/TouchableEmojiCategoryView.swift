@@ -53,9 +53,10 @@ final class TouchableEmojiCategoryView: UIView {
     
     // MARK: - Init
     
-    init(delegate: EmojiCategoryViewDelegate,
-         categoryIndex: Int,
-         selectedEmojiCategoryTintColor: UIColor
+    init(
+        delegate: EmojiCategoryViewDelegate,
+        categoryIndex: Int,
+        selectedEmojiCategoryTintColor: UIColor
     ) {
         self.delegate = delegate
         self.categoryIndex = categoryIndex
@@ -66,6 +67,7 @@ final class TouchableEmojiCategoryView: UIView {
         super.init(frame: .zero)
     }
     
+    @available(*, unavailable, message: "init(coder:) has not been implemented")
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
