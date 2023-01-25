@@ -44,8 +44,9 @@ final class EmojiCategoryIconView: UIView {
     
     // MARK: - Init
     
-    init(type: CategoryType,
-         selectedIconTintColor: UIColor
+    init(
+        type: CategoryType,
+        selectedIconTintColor: UIColor
     ) {
         self.type = type
         self.selectedIconTintColor = selectedIconTintColor
@@ -65,16 +66,19 @@ final class EmojiCategoryIconView: UIView {
     /// - Parameter state: Target icon state. Based on this state, the target color will be selected.
     func updateIconTintColor(for state: EmojiCategoryIconViewState) {
         guard self.state != state else { return }
-        
         self.state = state
+        
         switch state {
         case .standard:
             currentIconTintColor = .systemGray
+            
         case .highlighted:
             currentIconTintColor = currentIconTintColor.adjust(by: 40)
+            
         case .selected:
             currentIconTintColor = selectedIconTintColor
         }
+        
         setNeedsDisplay()
     }
 }
@@ -87,8 +91,9 @@ extension EmojiCategoryIconView {
         super.draw(rect)
         
         /// New centered rect based on bounds width to prevent stretching of the icon.
-        let rect = CGRect(origin: CGPoint(x: 0, y: (rect.height - rect.width) / 2),
-                          size: CGSize(width: rect.width, height: rect.width)
+        let rect = CGRect(
+            origin: CGPoint(x: 0, y: (rect.height - rect.width) / 2),
+            size: CGSize(width: rect.width, height: rect.width)
         )
         
         switch type {
