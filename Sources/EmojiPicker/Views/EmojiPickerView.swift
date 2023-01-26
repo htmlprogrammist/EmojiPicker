@@ -147,11 +147,13 @@ final class EmojiPickerView: UIView {
         categoriesStackHeightConstraint?.constant = categoriesStackViewHeight
         categoryViews = []
         categoriesStackView.subviews.forEach { $0.removeFromSuperview() }
-      
-        for categoryIndex in 0...7 {
+        
+        var index = 0
+        for type in CategoryType.allCases {
             let categoryView = TouchableEmojiCategoryView(
                 delegate: self,
-                categoryIndex: categoryIndex,
+                categoryIndex: index,
+                categoryType: type,
                 selectedEmojiCategoryTintColor: selectedEmojiCategoryTintColor
             )
             
@@ -159,6 +161,7 @@ final class EmojiPickerView: UIView {
             categoryView.updateCategoryViewState(selectedCategoryIndex: selectedCategoryIndex)
             categoryViews.append(categoryView)
             categoriesStackView.addArrangedSubview(categoryView)
+            index += 1
         }
     }
     

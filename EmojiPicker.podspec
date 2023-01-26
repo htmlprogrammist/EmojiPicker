@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   
   s.source = { :git => 'https://github.com/htmlprogrammist/EmojiPicker.git', :tag => s.version.to_s }
   s.source_files = 'Sources/EmojiPicker/**/*.{swift}'
-  s.resource_bundle = { "EmojiPicker" => ["Sources/EmojiPicker/**/*.lproj/*.{strings}"] }
+  s.resource_bundle = { "Resources" => ["Sources/EmojiPicker/**/*.{json,strings}"] }
   
   s.test_spec 'Tests' do |test_spec|
     test_spec.source_files = 'Tests/EmojiPickerTests/**/*.{swift}'

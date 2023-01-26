@@ -34,7 +34,7 @@ final class EmojiCategoryIconView: UIView {
     // MARK: - Private Properties
     
     /// Target icon type.
-    private var type: EmojiCategoryType
+    private var type: CategoryType
     /// Current tint color for the icon.
     private var currentIconTintColor: UIColor = .systemGray
     /// Selected tint color for the icon.
@@ -44,8 +44,9 @@ final class EmojiCategoryIconView: UIView {
     
     // MARK: - Init
     
-    init(type: EmojiCategoryType,
-         selectedIconTintColor: UIColor
+    init(
+        type: CategoryType,
+        selectedIconTintColor: UIColor
     ) {
         self.type = type
         self.selectedIconTintColor = selectedIconTintColor
@@ -65,16 +66,19 @@ final class EmojiCategoryIconView: UIView {
     /// - Parameter state: Target icon state. Based on this state, the target color will be selected.
     func updateIconTintColor(for state: EmojiCategoryIconViewState) {
         guard self.state != state else { return }
-        
         self.state = state
+        
         switch state {
         case .standard:
             currentIconTintColor = .systemGray
+            
         case .highlighted:
             currentIconTintColor = currentIconTintColor.adjust(by: 40)
+            
         case .selected:
             currentIconTintColor = selectedIconTintColor
         }
+        
         setNeedsDisplay()
     }
 }
@@ -87,8 +91,9 @@ extension EmojiCategoryIconView {
         super.draw(rect)
         
         /// New centered rect based on bounds width to prevent stretching of the icon.
-        let rect = CGRect(origin: CGPoint(x: 0, y: (rect.height - rect.width) / 2),
-                          size: CGSize(width: rect.width, height: rect.width)
+        let rect = CGRect(
+            origin: CGPoint(x: 0, y: (rect.height - rect.width) / 2),
+            size: CGSize(width: rect.width, height: rect.width)
         )
         
         switch type {
@@ -96,11 +101,11 @@ extension EmojiCategoryIconView {
             CategoryIconsDrawKit.drawPeopleCategory(frame: rect, tintColor: currentIconTintColor)
         case .nature:
             CategoryIconsDrawKit.drawNatureCategory(frame: rect, tintColor: currentIconTintColor)
-        case .foodAndDrink:
+        case .foods:
             CategoryIconsDrawKit.drawFoodAndDrinkCategory(frame: rect, tintColor: currentIconTintColor)
         case .activity:
             CategoryIconsDrawKit.drawActivityCategory(frame: rect, tintColor: currentIconTintColor)
-        case .travelAndPlaces:
+        case .places:
             CategoryIconsDrawKit.drawTravelAndPlacesCategory(frame: rect, tintColor: currentIconTintColor)
         case .objects:
             CategoryIconsDrawKit.drawObjectsCategory(frame: rect, tintColor: currentIconTintColor)

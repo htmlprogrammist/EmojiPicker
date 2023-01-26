@@ -1,8 +1,8 @@
-"emotionsAndPeople" = "СМАЙЛИКИ Й ЛЮДИ";
-"animalsAndNature" = "ФЛОРА І ФАУНА";
-"foodAndDrinks" = "ЇЖА І НАПОЇ";
-"activities" = "АКТИВНІСТЬ";
-"travellingAndPlaces" = "ПОДОРОЖІ Й МІСЦЯ";
+"people" = "СМАЙЛИКИ Й ЛЮДИ";
+"nature" = "ФЛОРА І ФАУНА";
+"foods" = "ЇЖА І НАПОЇ";
+"activity" = "АКТИВНІСТЬ";
+"places" = "ПОДОРОЖІ Й МІСЦЯ";
 "objects" = "ОБ'ЄКТИ";
 "symbols" = "СИМВОЛИ";
 "flags" = "ПРАПОРИ";

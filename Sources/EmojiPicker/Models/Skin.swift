@@ -1,5 +1,5 @@
 // The MIT License (MIT)
-// Copyright © 2022 Ivan Izyumkin
+// Copyright © 2022 Egor Badmaev
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -19,20 +19,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import Foundation
-
-/**
- Emojis are being represented as hex values. This code converts provided emojis (ints) to a one line string.
- 
- - Experiment: `[0x1F600, 0x1F601, 0x1F602, 0x1F923, 0x1F603]` -> "😀😁😂🤣😃".
- */
-extension Array where Element == Int {
-    func emoji() -> String {
-        var emoji = ""
-        for hexValue in self {
-            guard let unicode = UnicodeScalar(hexValue) else { break }
-            emoji.append(String(unicode))
-        }
-        return emoji
-    }
+/// An object that represents skin tones for emojis.
+struct Skin: Decodable {
+    /// Unicode.
+    let unified: String
+    /// Emoji as symbol. For example: 😄
+    let native: String
 }
