@@ -41,6 +41,7 @@
 		D87D90972546DFB456AE2B38379D5E2C /* Pods-EmojiPicker_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 509EFFB149756F700CC3A368970476A6 /* Pods-EmojiPicker_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E560B1C76BE6582D935CEEA610D0BABE /* EmojiSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B34CAF72D888BF33BA5EDC927AE0E87 /* EmojiSet.swift */; };
 		EF151333810F8817AF623BA30945E6AC /* 14.json in Resources */ = {isa = PBXBuildFile; fileRef = 97020F14B35520B0855FCDC0554A444F /* 14.json */; };
+		F0D36B502981CE1B00FDC310 /* CategoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D36B4F2981CE1B00FDC310 /* CategoryTests.swift */; };
 		F1DCE6CFACDEE599EC225E7AA0E8C7EC /* Skin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775CE6A22026D8062153BCD58A3D1533 /* Skin.swift */; };
 		F8389B295872C5B053DE3B3F645E03F1 /* 5.json in Resources */ = {isa = PBXBuildFile; fileRef = AD21E4F64085656007E1A4C49691E9D8 /* 5.json */; };
 		FC1F4288EDA3623A0789414458F75580 /* 13.1.json in Resources */ = {isa = PBXBuildFile; fileRef = F711D2A372CCCCC578D5E43DADD5E322 /* 13.1.json */; };
@@ -133,6 +134,7 @@
 		E9135CB45F85FC878C6CA5125B6F87A8 /* EmojiPickerDelegateMock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EmojiPickerDelegateMock.swift; sourceTree = "<group>"; };
 		ECC26C6F65D6AD027C546C4D2F9220D9 /* EmojiPicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EmojiPicker.release.xcconfig; sourceTree = "<group>"; };
 		EFB92181D9633CD27218C6E8E11B3A23 /* EmojiManagerTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EmojiManagerTests.swift; path = Tests/EmojiPickerTests/EmojiManagerTests.swift; sourceTree = "<group>"; };
+		F0D36B4F2981CE1B00FDC310 /* CategoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryTests.swift; path = Tests/EmojiPickerTests/CategoryTests.swift; sourceTree = "<group>"; };
 		F37C787ED9137E9A17EBC07BC22F4A71 /* EmojiPicker-Unit-Tests-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EmojiPicker-Unit-Tests-prefix.pch"; sourceTree = "<group>"; };
 		F4404D097107D0E5C3370ADA3A699D30 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F5383EAF33B429E1172FA71E03D5860B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 				861C76504166FB072BAEA3516D6360D6 /* PickerArrowDirectionModeTests.swift */,
 				349E4F5DDF56A8630554DB3A39433086 /* Mocks */,
 				9B30C5736B4A622EA60A63185AE1626A /* Stubs */,
+				F0D36B4F2981CE1B00FDC310 /* CategoryTests.swift */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -684,6 +687,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				35B0CCBF174A4446616EB3431FC29816 /* EmojiManagerStub.swift in Sources */,
+				F0D36B502981CE1B00FDC310 /* CategoryTests.swift in Sources */,
 				C5594336011F4D3963933843C438BA28 /* EmojiManagerTests.swift in Sources */,
 				B503EA01C769FC95992D9BE56FEF57D6 /* EmojiPickerDelegateMock.swift in Sources */,
 				52BBF2A68F33CDFCA0161984E1908957 /* EmojiPickerViewModelTests.swift in Sources */,

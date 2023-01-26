@@ -19,8 +19,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import Foundation
-
 /// Protocol for a ViewModel which is being used in `EmojiPickerViewController`.
 protocol EmojiPickerViewModelProtocol {
     /// The observed variable that is responsible for the choice of emoji.
@@ -70,7 +68,7 @@ final class EmojiPickerViewModel: EmojiPickerViewModelProtocol {
     
     func emoji(at indexPath: IndexPath) -> String {
         let name = emojiSet.categories[indexPath.section].emojis[indexPath.row]
-        return emojiSet.emojis[name]?.skins[0].native ?? ""
+        return emojiSet.emojis[name]?.skins[0].native ?? "❗️"
     }
     
     func sectionHeaderViewModel(for section: Int) -> String {

@@ -35,7 +35,7 @@ protocol EmojiManagerProtocol {
 /// The class is responsible for getting a relevant set of emojis for iOS version.
 final class EmojiManager: EmojiManagerProtocol {
     
-    // MARK: - Private
+    // MARK: - Private Properties
     
     private let decoder = JSONDecoder()
     /// Version of emoji set.
