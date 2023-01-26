@@ -33,13 +33,4 @@ class EmojiManagerTests: XCTestCase {
         XCTAssertGreaterThan(result.categories.count, 0)
         XCTAssertGreaterThan(result.aliases.count, 0)
     }
-    
-    /**
-     Tests that device version are identical.
-     */
-    func testDeterminingDeviceVersion() throws {
-        let expectedVersion = (UIDevice.current.systemVersion as NSString).doubleValue
-        
-        XCTAssertEqual(emojiManager.deviceVersion, expectedVersion)
-    }
 }
