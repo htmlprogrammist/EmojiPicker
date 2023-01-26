@@ -19,6 +19,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+import Foundation
+
 /// Protocol for a ViewModel which is being used in `EmojiPickerViewController`.
 protocol EmojiPickerViewModelProtocol {
     /// The observed variable that is responsible for the choice of emoji.
