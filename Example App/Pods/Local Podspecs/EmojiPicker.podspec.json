@@ -13,8 +13,8 @@
   },
   "source_files": "Sources/EmojiPicker/**/*.{swift}",
   "resource_bundles": {
-    "EmojiPicker": [
-      "Sources/EmojiPicker/**/*.lproj/*.{strings}"
+    "Resources": [
+      "Sources/EmojiPicker/**/*.{json,strings}"
     ]
   },
   "swift_versions": "4.2",

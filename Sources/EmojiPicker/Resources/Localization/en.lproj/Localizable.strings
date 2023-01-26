@@ -1,8 +1,8 @@
-"emotionsAndPeople" = "SMILEYS & PEOPLE";
-"animalsAndNature" = "ANIMALS & NATURE";
-"foodAndDrinks" = "FOOD & DRINK";
-"activities" = "ACTIVITY";
-"travellingAndPlaces" = "TRAVEL & PLACES";
+"people" = "SMILEYS & PEOPLE";
+"nature" = "ANIMALS & NATURE";
+"foods" = "FOOD & DRINK";
+"activity" = "ACTIVITY";
+"places" = "TRAVEL & PLACES";
 "objects" = "OBJECTS";
 "symbols" = "SYMBOLS";
 "flags" = "FLAGS";
