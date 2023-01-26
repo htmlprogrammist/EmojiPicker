@@ -40,31 +40,44 @@ protocol EmojiPickerViewModelProtocol {
 /// Emoji Picker view model.
 final class EmojiPickerViewModel: EmojiPickerViewModelProtocol {
     
+    // MARK: - Internal Properties
+    
     /// Observable object of selected emoji.
     var selectedEmoji = Observable<String>(value: "")
     /// Observable object of selected category index of an emoji.
     var selectedEmojiCategoryIndex = Observable<Int>(value: 0)
     
-    /// All emoji categories.
-    private var emojiCategories = [EmojiCategory]()
+    // MARK: - Private Properties
     
-    init(unicodeManager: UnicodeManagerProtocol) {
-        emojiCategories = unicodeManager.getEmojisForCurrentIOSVersion()
+    /// Set of emojis.
+    private let emojiSet: EmojiSet
+    
+    // MARK: - Init
+    
+    init(emojiManager: EmojiManagerProtocol) {
+        emojiSet = emojiManager.provideEmojis()
     }
     
+    // MARK: - Internal Methods
+    
     func numberOfSections() -> Int {
-        return emojiCategories.count
+        return emojiSet.categories.count
     }
     
     func numberOfItems(in section: Int) -> Int {
-        return emojiCategories[section].emojis.count
+        return emojiSet.categories[section].emojis.count
     }
     
     func emoji(at indexPath: IndexPath) -> String {
-        return emojiCategories[indexPath.section].emojis[indexPath.row].emoji()
+        let name = emojiSet.categories[indexPath.section].emojis[indexPath.row]
+        return emojiSet.emojis[name]?.skins[0].native ?? "❗️"
     }
     
     func sectionHeaderViewModel(for section: Int) -> String {
-        return emojiCategories[section].categoryName
+        return NSLocalizedString(
+            emojiSet.categories[section].type.rawValue,
+            bundle: .module,
+            comment: ""
+        )
     }
 }
