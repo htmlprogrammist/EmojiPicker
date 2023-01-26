@@ -178,6 +178,5 @@ To play around with the project, contribute to it, see how it works or adapt it 
 1. Clone or fork this repository to yourself
 2. Open `Example App/EmojiPicker.xcworkspace` file
 3. Expand `Pods` target
-4. Expand `Development Pods` and `EmojiPicker` directories
-  Here you can make your changes.
+4. Expand `Development Pods` and `EmojiPicker` directories. Here you can make your changes
 5. Build & Run project to see an immediate result on an example application. Have fun!
