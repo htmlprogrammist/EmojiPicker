@@ -1,8 +1,8 @@
-"emotionsAndPeople" = "微笑与人";
-"animalsAndNature" = "动物与自然";
-"foodAndDrinks" = "食物及饮品";
-"activities" = "活动";
-"travellingAndPlaces" = "旅游及地点";
+"people" = "微笑与人";
+"nature" = "动物与自然";
+"foods" = "食物及饮品";
+"activity" = "活动";
+"places" = "旅游及地点";
 "objects" = "对象";
 "symbols" = "符号";
 "flags" = "旗帜";
