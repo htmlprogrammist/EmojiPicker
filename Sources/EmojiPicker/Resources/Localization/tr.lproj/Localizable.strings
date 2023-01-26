@@ -1,8 +1,8 @@
-"emotionsAndPeople" = "YÜZ İFADELERİ & İNSANLAR";
-"animalsAndNature" = "HAYVANLAR & DOĞA";
-"foodAndDrinks" = "YİYECEK & İÇECEK";
-"activities" = "ETKİNLİK";
-"travellingAndPlaces" = "SEYAHET & YERLER";
+"people" = "YÜZ İFADELERİ & İNSANLAR";
+"nature" = "HAYVANLAR & DOĞA";
+"foods" = "YİYECEK & İÇECEK";
+"activity" = "ETKİNLİK";
+"places" = "SEYAHET & YERLER";
 "objects" = "NESNELER";
 "symbols" = "SEMBOLLER";
 "flags" = "BAYRAKLAR";

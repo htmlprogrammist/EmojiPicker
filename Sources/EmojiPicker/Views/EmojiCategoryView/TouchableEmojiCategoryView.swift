@@ -56,12 +56,13 @@ final class TouchableEmojiCategoryView: UIView {
     init(
         delegate: EmojiCategoryViewDelegate,
         categoryIndex: Int,
+        categoryType: CategoryType,
         selectedEmojiCategoryTintColor: UIColor
     ) {
         self.delegate = delegate
         self.categoryIndex = categoryIndex
         self.categoryIconView = EmojiCategoryIconView(
-            type: EmojiCategoryType(rawValue: categoryIndex) ?? .people,
+            type: categoryType,
             selectedIconTintColor: selectedEmojiCategoryTintColor
         )
         super.init(frame: .zero)
