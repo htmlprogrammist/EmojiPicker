@@ -45,8 +45,15 @@ final class EmojiPickerView: UIView {
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         collectionView.backgroundColor = .clear
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(EmojiCollectionViewCell.self, forCellWithReuseIdentifier: EmojiCollectionViewCell.identifier)
-        collectionView.register(EmojiCollectionViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: EmojiCollectionViewHeader.identifier)
+        collectionView.register(
+            EmojiCollectionViewCell.self,
+            forCellWithReuseIdentifier: EmojiCollectionViewCell.identifier
+        )
+        collectionView.register(
+            EmojiCollectionViewHeader.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: EmojiCollectionViewHeader.identifier
+        )
         return collectionView
     }()
     
@@ -68,12 +75,23 @@ final class EmojiPickerView: UIView {
     }()
     
     private var categoryViews = [TouchableEmojiCategoryView]()
+    private var selectedCategoryIndex: Int = .zero
     
     /// Describes height for `categoriesStackView`.
     ///
-    /// - Note: The number `0.13` was taken based on the proportion of this element to the width of the EmojiPicker on MacOS.
-    private var categoriesStackViewHeight: CGFloat {
-        return bounds.width * 0.13
+    /// - Note: The number `0.13` was taken based on the proportion of this element to the width of the EmojiPicker on macOS.
+    private var categoriesStackViewHeight: CGFloat { bounds.width * 0.13 }
+    private var categoriesStackHeightConstraint: NSLayoutConstraint?
+  
+    // MARK: - Init
+    override init(frame: CGRect) {
+        super.init(frame: .zero)
+        setupView()
+    }
+  
+    @available(*, unavailable, message: "init(coder:) has not been implemented")
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: - Override
@@ -82,27 +100,31 @@ final class EmojiPickerView: UIView {
         super.draw(rect)
         
         setupCategoryViews()
-        setupView()
     }
     
     /// Passes the index of the selected category to all categoryViews to update the state.
     ///
     /// - Parameter categoryIndex: Selected category index.
     func updateSelectedCategoryIcon(with categoryIndex: Int) {
+        selectedCategoryIndex = categoryIndex
         categoryViews.forEach {
             $0.updateCategoryViewState(selectedCategoryIndex: categoryIndex)
         }
     }
     
     // MARK: - Private Methods
-
     private func setupView() {
         backgroundColor = .popoverBackgroundColor
-        
+      
         addSubview(collectionView)
         addSubview(categoriesStackView)
         addSubview(separatorView)
         
+        let categoriesStackHeightConstraint = categoriesStackView.heightAnchor.constraint(
+          equalToConstant: categoriesStackViewHeight
+        )
+        self.categoriesStackHeightConstraint = categoriesStackHeightConstraint
+      
         NSLayoutConstraint.activate([
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
@@ -112,7 +134,7 @@ final class EmojiPickerView: UIView {
             categoriesStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             categoriesStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             categoriesStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -safeAreaInsets.bottom),
-            categoriesStackView.heightAnchor.constraint(equalToConstant: categoriesStackViewHeight),
+            categoriesStackHeightConstraint,
             
             separatorView.leadingAnchor.constraint(equalTo: leadingAnchor),
             separatorView.trailingAnchor.constraint(equalTo: trailingAnchor),
@@ -122,6 +144,10 @@ final class EmojiPickerView: UIView {
     }
     
     private func setupCategoryViews() {
+        categoriesStackHeightConstraint?.constant = categoriesStackViewHeight
+        categoryViews = []
+        categoriesStackView.subviews.forEach { $0.removeFromSuperview() }
+        
         var index = 0
         for type in CategoryType.allCases {
             let categoryView = TouchableEmojiCategoryView(
@@ -132,7 +158,7 @@ final class EmojiPickerView: UIView {
             )
             
             /// We need to set _selected_ state for the first category (default at the start).
-            categoryView.updateCategoryViewState(selectedCategoryIndex: 0)
+            categoryView.updateCategoryViewState(selectedCategoryIndex: selectedCategoryIndex)
             categoryViews.append(categoryView)
             categoriesStackView.addArrangedSubview(categoryView)
             index += 1

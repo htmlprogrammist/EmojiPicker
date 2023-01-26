@@ -170,16 +170,27 @@ public final class EmojiPickerViewController: UIViewController {
     
     /// Sets up preferred content size.
     ///
-    /// - Note: The number `0.16` was taken based on the proportion of height to the width of the EmojiPicker on MacOS.
+    /// - Note: The number `0.16` was taken based on the proportion of height to the width of the EmojiPicker on macOS.
     private func setupPreferredContentSize() {
-        let sideInset: CGFloat = 20
-        let screenWidth: CGFloat = UIScreen.main.nativeBounds.width / UIScreen.main.nativeScale
-        let popoverWidth: CGFloat = screenWidth - (sideInset * 2)
-        let heightProportionToWidth: CGFloat = 1.16
-        
-        preferredContentSize = CGSize(width: popoverWidth,
-                                      height: customHeight ?? popoverWidth * heightProportionToWidth
-        )
+        let size: CGSize = {
+            switch UIDevice.current.userInterfaceIdiom {
+            case .phone:
+                let sideInset: CGFloat = 20
+                let screenWidth: CGFloat = UIScreen.main.nativeBounds.width / UIScreen.main.nativeScale
+                let popoverWidth: CGFloat = screenWidth - (sideInset * 2)
+                // The number 0.16 was taken based on the proportion of height to the width of the EmojiPicker on macOS.
+                let heightProportionToWidth: CGFloat = 1.16
+                return CGSize(
+                    width: popoverWidth,
+                    height: popoverWidth * heightProportionToWidth
+                )
+            default:
+                // macOS size
+                return CGSize(width: 410, height: 460)
+            }
+        }()
+       
+        preferredContentSize = size
     }
     
     private func setupArrowDirections() {
