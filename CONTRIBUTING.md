@@ -84,3 +84,11 @@ If you can't find valid, add new to codestyle agreements please. Other can be us
     docs: update readme with additional information
     docs: update description of run() method
     ```
+
+## Before making pull request
+
+1. Change version in [`EmojiPicker.podspec`](/EmojiPicker.podspec) file
+2. Update version of dependency in Example App:
+    1. Open terminal
+    2. Open Example app directory using `cd Example\ App/`
+    3. Update pod version via command `pod install`
