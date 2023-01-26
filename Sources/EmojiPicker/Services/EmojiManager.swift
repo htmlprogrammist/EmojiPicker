@@ -19,13 +19,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import UIKit.UIDevice
+import UIKit
 
+/// An abstraction over entity that provides emoji set.
 protocol EmojiManagerProtocol {
-    
-    /// Operating System version of a device.
-    var deviceVersion: Double { get }
-    
     /// Gets version of iOS for current device.
     ///
     /// - Returns: Array of emoji categories (and array of emojis inside them).
@@ -37,21 +34,41 @@ final class EmojiManager: EmojiManagerProtocol {
     
     // MARK: - Private Properties
     
+    /// An object that decodes instances of a data type from JSON objects.
     private let decoder = JSONDecoder()
+    
     /// Version of emoji set.
     ///
     /// - Note: The value is `5` by default.
-    private var emojiVersion = "5"
+    private var emojiVersion: String {
+        switch deviceVersion {
+        case 12.1...13.1:
+            return "11"
+            
+        case 13.2...14.1:
+            return "12.1"
+            
+        case 14.2...14.4:
+            return "13"
+            
+        case 14.5...15.3:
+            return "13.1"
+            
+        case 15.4...:
+            return "14"
+            
+        default:
+            return "5"
+        }
+    }
     
-    // MARK: - Internal
-    
-    var deviceVersion: Double {
+    private var deviceVersion: Double {
         return (UIDevice.current.systemVersion as NSString).doubleValue
     }
     
+    // MARK: - Internal Methods
+    
     func provideEmojis() -> EmojiSet {
-        setEmojiVersion()
-        
         guard let path = Bundle.module.path(forResource: emojiVersion, ofType: "json"),
               let data = try? Data(contentsOf: URL(fileURLWithPath: path))
         else {
@@ -64,29 +81,5 @@ final class EmojiManager: EmojiManagerProtocol {
         }
         
         return emojiSet
-    }
-    
-    // MARK: - Private Methods
-    
-    private func setEmojiVersion() {
-        switch deviceVersion {
-        case 12.1...13.1:
-            emojiVersion = "11"
-            
-        case 13.2...14.1:
-            emojiVersion = "12.1"
-            
-        case 14.2...14.4:
-            emojiVersion = "13"
-            
-        case 14.5...15.3:
-            emojiVersion = "13.1"
-            
-        case 15.4...:
-            emojiVersion = "14"
-            
-        default:
-            emojiVersion = "5"
-        }
     }
 }
