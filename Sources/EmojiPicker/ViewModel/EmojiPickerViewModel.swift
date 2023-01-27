@@ -65,12 +65,12 @@ final class EmojiPickerViewModel: EmojiPickerViewModelProtocol {
     }
     
     func numberOfItems(in section: Int) -> Int {
-        return emojiSet.categories[section].emojis.count
+        return emojiSet.categories[section].identifiers.count
     }
     
     func emoji(at indexPath: IndexPath) -> String {
-        let name = emojiSet.categories[indexPath.section].emojis[indexPath.row]
-        return emojiSet.emojis[name]?.emoji ?? "❗️"
+        let name = emojiSet.categories[indexPath.section].identifiers[indexPath.row]
+        return emojiSet.emojis[name]?.emoji ?? "⚠️"
     }
     
     func sectionHeaderViewModel(for section: Int) -> String {

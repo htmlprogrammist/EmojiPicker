@@ -24,11 +24,11 @@ struct Category: Decodable {
     /// Type-safe category type.
     let type: CategoryType
     /// Identifiers of emojis.
-    let emojis: [String]
+    let identifiers: [Emoji.ID]
     
     enum CodingKeys: String, CodingKey {
         case type = "id"
-        case emojis
+        case identifiers = "emojis"
     }
 }
 

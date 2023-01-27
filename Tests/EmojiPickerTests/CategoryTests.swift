@@ -17,23 +17,29 @@ class CategoryTests: XCTestCase {
     }
     
     func test_decodeCategory_success() throws {
-        let result = try? JSONDecoder().decode(EmojiPicker.Category.self, from: category1)
+        category = try? JSONDecoder().decode(EmojiPicker.Category.self, from: category1)
         
-        XCTAssertNotNil(result)
-        XCTAssertEqual(result?.emojis, ["grinning", "smiley", "smile"])
+        XCTAssertNotNil(category, "The result of decoding should be successful")
+        XCTAssertEqual(category.type, CategoryType.people)
+        XCTAssertEqual(category?.identifiers, ["grinning", "smiley", "smile"])
     }
     
-    func test_decodeCategory_arraySuccess() throws {
-        let result = try? JSONDecoder().decode([EmojiPicker.Category].self, from: category3)
+    func test_decodeCategory_wrongCodingKeys1() throws {
+        category = try? JSONDecoder().decode(EmojiPicker.Category.self, from: category2)
         
-        XCTAssertNotNil(result)
-        XCTAssertEqual(result?.count, 2)
+        XCTAssertNil(category)
     }
     
-    func test_decodeCategory_wrongCodingKeys() throws {
-        let result = try? JSONDecoder().decode(EmojiPicker.Category.self, from: category2)
+    func test_decodeCategory_wrongCodingKeys2() throws {
+        category = try? JSONDecoder().decode(EmojiPicker.Category.self, from: category3)
         
-        XCTAssertNil(result)
+        XCTAssertNil(category)
+    }
+    
+    func test_decodeCategory_wrongCodingKeys3() throws {
+        category = try? JSONDecoder().decode(EmojiPicker.Category.self, from: category4)
+        
+        XCTAssertNil(category)
     }
 }
 
@@ -51,7 +57,7 @@ fileprivate let category1 = Data("""
 fileprivate let category2 = Data("""
 {
     "type": "people",
-    "emojis": [
+    "identifiers": [
         "grinning",
         "smiley",
         "smile",
@@ -60,22 +66,23 @@ fileprivate let category2 = Data("""
 """.utf8)
 
 fileprivate let category3 = Data("""
-[
-    {
-      "id": "people",
-      "emojis": [
+{
+    "id": "people",
+    "identifiers": [
         "grinning",
+        "smiley",
         "smile",
-        "zzz"
-      ]
-    },
-    {
-      "id": "nature",
-      "emojis": [
-        "monkey",
-        "leaves",
-        "dog"
-      ]
-    }
-]
+    ]
+}
+""".utf8)
+
+fileprivate let category4 = Data("""
+{
+    "type": "people",
+    "emojis": [
+        "grinning",
+        "smiley",
+        "smile",
+    ]
+}
 """.utf8)
