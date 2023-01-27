@@ -51,13 +51,8 @@ class EmojiPickerViewModelTests: XCTestCase {
         
         let expectedResult = emojiManagerStub.emojiSet.emojis[
             emojiManagerStub.emojiSet.categories[indexPath.section].emojis[indexPath.row]
-        ]?
-            .skins[0]
-            .native
-        XCTAssertEqual(
-            result,
-            expectedResult
-        )
+        ]?.emoji
+        XCTAssertEqual(result, expectedResult)
     }
     
     func testSectionHeaderViewModelMethod() throws {
