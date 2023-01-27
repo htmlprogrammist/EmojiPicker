@@ -20,7 +20,7 @@
 // SOFTWARE.
 
 /// An object that represents emoji.
-struct Emoji: Decodable {
+struct Emoji: Decodable, Identifiable {
     /// Emoji identifier.
     let id: String
     /// Name of an emoji.
@@ -31,4 +31,13 @@ struct Emoji: Decodable {
     let skins: [Skin]
     /// Version in which the emoji appeared.
     let version: Double
+}
+
+extension Emoji {
+    /// Main emoji.
+    ///
+    /// This property is used to get the main emoji to show it in the collection view.
+    var emoji: String {
+        return skins[0].native
+    }
 }

@@ -70,7 +70,7 @@ final class EmojiPickerViewModel: EmojiPickerViewModelProtocol {
     
     func emoji(at indexPath: IndexPath) -> String {
         let name = emojiSet.categories[indexPath.section].emojis[indexPath.row]
-        return emojiSet.emojis[name]?.skins[0].native ?? "❗️"
+        return emojiSet.emojis[name]?.emoji ?? "❗️"
     }
     
     func sectionHeaderViewModel(for section: Int) -> String {
