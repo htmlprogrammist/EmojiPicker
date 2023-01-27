@@ -20,6 +20,7 @@ class CategoryTests: XCTestCase {
         let result = try? JSONDecoder().decode(EmojiPicker.Category.self, from: category1)
         
         XCTAssertNotNil(result)
+        XCTAssertEqual(result?.type, CategoryType.people)
         XCTAssertEqual(result?.emojis, ["grinning", "smiley", "smile"])
     }
     
