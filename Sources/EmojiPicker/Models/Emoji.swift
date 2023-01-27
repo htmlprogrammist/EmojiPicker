@@ -31,13 +31,15 @@ struct Emoji: Decodable, Identifiable {
     let skins: [Skin]
     /// Version in which the emoji appeared.
     let version: Double
+    /// Skin tone number. We save it so user can use the skin he chose.
+    var skinToneIndex = 0
 }
 
 extension Emoji {
-    /// Main emoji.
+    /// String emoji. For example: 😄
     ///
-    /// This property is used to get the main emoji to show it in the collection view.
+    /// Shows in the collection view.
     var emoji: String {
-        return skins[0].native
+        return skins[skinToneIndex].native
     }
 }

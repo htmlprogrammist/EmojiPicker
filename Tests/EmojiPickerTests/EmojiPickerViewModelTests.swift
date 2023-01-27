@@ -41,7 +41,7 @@ class EmojiPickerViewModelTests: XCTestCase {
         
         let result = viewModel.numberOfItems(in: 0)
         
-        XCTAssertEqual(result, emojiManagerStub.emojiSet.categories[section].emojis.count)
+        XCTAssertEqual(result, emojiManagerStub.emojiSet.categories[section].identifiers.count)
     }
     
     func testEmojiAtIndexPathMethod() throws {
@@ -50,7 +50,7 @@ class EmojiPickerViewModelTests: XCTestCase {
         let result = viewModel.emoji(at: indexPath)
         
         let expectedResult = emojiManagerStub.emojiSet.emojis[
-            emojiManagerStub.emojiSet.categories[indexPath.section].emojis[indexPath.row]
+            emojiManagerStub.emojiSet.categories[indexPath.section].identifiers[indexPath.row]
         ]?.emoji
         XCTAssertEqual(result, expectedResult)
     }

@@ -9,22 +9,18 @@
 
 class EmojiManagerStub: EmojiManagerProtocol {
     
-    var deviceVersion: Double {
-        11.1
-    }
-    
     func provideEmojis() -> EmojiSet {
         emojiSet
     }
     
     var emojiSet = EmojiSet(
         categories: [
-            Category(type: .people, emojis: [
+            Category(type: .people, identifiers: [
                 "smile",
                 "laughing",
                 "grin"
             ]),
-            Category(type: .foods, emojis: [
+            Category(type: .foods, identifiers: [
                 "peach"
             ]),
         ],
@@ -36,7 +32,8 @@ class EmojiManagerStub: EmojiManagerProtocol {
                 skins: [
                     Skin(unified: "1f604", native: "😄")
                 ],
-                version: 1.0),
+                version: 1.0
+            ),
             "laughing": Emoji(
                 id: "laughing",
                 name: "Grinning Squinting Face",
@@ -44,7 +41,8 @@ class EmojiManagerStub: EmojiManagerProtocol {
                 skins: [
                     Skin(unified: "1f606", native: "😆")
                 ],
-                version: 1.0),
+                version: 1.0
+            ),
             "grin": Emoji(
                 id: "grin",
                 name: "Beaming Face with Smiling Eyes",
@@ -52,7 +50,8 @@ class EmojiManagerStub: EmojiManagerProtocol {
                 skins: [
                     Skin(unified: "1f601", native: "😁")
                 ],
-                version: 1.0),
+                version: 1.0
+            ),
             "peach": Emoji(
                 id: "peach",
                 name: "Peach",
@@ -60,7 +59,8 @@ class EmojiManagerStub: EmojiManagerProtocol {
                 skins: [
                     Skin(unified: "1f351", native: "🍑")
                 ],
-                version: 1.0),
+                version: 1.0
+            ),
         ],
         aliases: [:]
     )
