@@ -1,4 +1,5 @@
 // The MIT License (MIT)
+//
 // Copyright © 2022 Ivan Izyumkin
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -58,7 +59,7 @@ final class EmojiPickerView: UIView {
     }()
     
     // MARK: - Private Properties
-
+    
     private let separatorView: UIView = {
         let view = UIView()
         view.backgroundColor = .separatorColor
@@ -82,13 +83,14 @@ final class EmojiPickerView: UIView {
     /// - Note: The number `0.13` was taken based on the proportion of this element to the width of the EmojiPicker on macOS.
     private var categoriesStackViewHeight: CGFloat { bounds.width * 0.13 }
     private var categoriesStackHeightConstraint: NSLayoutConstraint?
-  
+    
     // MARK: - Init
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        setupView()
+        setupCategoryViews()
     }
-  
+    
     @available(*, unavailable, message: "init(coder:) has not been implemented")
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -99,7 +101,7 @@ final class EmojiPickerView: UIView {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         
-        setupCategoryViews()
+        setupView()
     }
     
     /// Passes the index of the selected category to all categoryViews to update the state.
@@ -113,18 +115,17 @@ final class EmojiPickerView: UIView {
     }
     
     // MARK: - Private Methods
+    
     private func setupView() {
-        backgroundColor = .popoverBackgroundColor
-      
         addSubview(collectionView)
         addSubview(categoriesStackView)
         addSubview(separatorView)
         
         let categoriesStackHeightConstraint = categoriesStackView.heightAnchor.constraint(
-          equalToConstant: categoriesStackViewHeight
+            equalToConstant: categoriesStackViewHeight
         )
         self.categoriesStackHeightConstraint = categoriesStackHeightConstraint
-      
+        
         NSLayoutConstraint.activate([
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
@@ -144,6 +145,7 @@ final class EmojiPickerView: UIView {
     }
     
     private func setupCategoryViews() {
+        backgroundColor = .popoverBackgroundColor
         categoriesStackHeightConstraint?.constant = categoriesStackViewHeight
         categoryViews = []
         categoriesStackView.subviews.forEach { $0.removeFromSuperview() }
