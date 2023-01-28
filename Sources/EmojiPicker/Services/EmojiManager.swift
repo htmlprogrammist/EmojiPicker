@@ -1,4 +1,5 @@
 // The MIT License (MIT)
+//
 // Copyright © 2022 Egor Badmaev
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -19,13 +20,13 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import UIKit
+import Foundation
 
 /// An abstraction over entity that provides emoji set.
 protocol EmojiManagerProtocol {
-    /// Gets version of iOS for current device.
+    /// Provides a set of emojis.
     ///
-    /// - Returns: Array of emoji categories (and array of emojis inside them).
+    /// - Returns: Set of emojis.
     func provideEmojis() -> EmojiSet
 }
 
@@ -62,8 +63,12 @@ final class EmojiManager: EmojiManagerProtocol {
         }
     }
     
+    /// Version of operating system of a device.
+    ///
+    /// It takes major and minor version of a device and returns it as `15.5`.
     private var deviceVersion: Double {
-        return (UIDevice.current.systemVersion as NSString).doubleValue
+        let operatingSystemVersion = ProcessInfo().operatingSystemVersion
+        return Double(operatingSystemVersion.majorVersion) + Double(operatingSystemVersion.minorVersion) / 10
     }
     
     // MARK: - Internal Methods
