@@ -153,15 +153,18 @@ viewController.feedbackGeneratorStyle = .soft
 
 ## Localization
 
+* Chinese 🇨🇳
 * English 🇬🇧
-* Russian 🇷🇺
-* Ukraine 🇺🇦
 * French 🇫🇷
 * German 🇩🇪
 * Hindi 🇮🇳
+* Russian 🇷🇺
 * Turkish 🇹🇷
+* Ukrainian 🇺🇦
 
 You can also contribute your language to this list. Please, read [following heading](#contributing) for more information.
+
+> ❗️ Note that the languages are arranged in alphabetical order
 
 ## Contributing
 
