@@ -1,4 +1,5 @@
 // The MIT License (MIT)
+//
 // Copyright © 2022 Egor Badmaev
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -24,11 +25,11 @@ struct Category: Decodable {
     /// Type-safe category type.
     let type: CategoryType
     /// Identifiers of emojis.
-    let emojis: [String]
+    let identifiers: [Emoji.ID]
     
     enum CodingKeys: String, CodingKey {
         case type = "id"
-        case emojis
+        case identifiers = "emojis"
     }
 }
 

@@ -1,4 +1,5 @@
 // The MIT License (MIT)
+//
 // Copyright © 2022 Egor Badmaev
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,8 +24,8 @@
 struct EmojiSet: Decodable {
     /// Emoji categories.
     let categories: [Category]
-    /// Emojis dictionary. Key is the name (id) of emoji.
-    let emojis: [String: Emoji]
+    /// Emojis dictionary from which you can get emojis by ID.
+    let emojis: [Emoji.ID: Emoji]
     /// Aliases of keywords for emojis.
     let aliases: [String: String]
 }

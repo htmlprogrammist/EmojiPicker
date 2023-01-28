@@ -1,4 +1,5 @@
 // The MIT License (MIT)
+//
 // Copyright © 2022 Egor Badmaev
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -20,7 +21,7 @@
 // SOFTWARE.
 
 /// An object that represents emoji.
-struct Emoji: Decodable {
+struct Emoji: Decodable, Identifiable {
     /// Emoji identifier.
     let id: String
     /// Name of an emoji.
@@ -31,4 +32,15 @@ struct Emoji: Decodable {
     let skins: [Skin]
     /// Version in which the emoji appeared.
     let version: Double
+    /// Skin tone number. We save it so user can use the skin he chose.
+    var skinToneIndex = 0
+}
+
+extension Emoji {
+    /// String emoji. For example: 😄
+    ///
+    /// Shows in the collection view.
+    var emoji: String {
+        return skins[skinToneIndex].native
+    }
 }

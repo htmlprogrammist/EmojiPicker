@@ -1,10 +1,8 @@
-# EmojiPicker
-
-Emoji picker for iOS like on macOS
-
-<p float="left">
-<img src="https://user-images.githubusercontent.com/50948518/172110164-b0dec76f-495d-4112-ad00-2708ffdda54a.gif" width="230">
-<img src="https://user-images.githubusercontent.com/50948518/171909950-ebf388f3-83a1-4b63-ad54-f58ba947e3bb.png" width="230">
+<p align="center">
+  <br>
+  <b>EmojiPicker</b> is a customizable package<br>implementing macOS-style emoji picker popover
+  <br>
+  <img width="640" alt="Emoji Picker Preview" src="https://user-images.githubusercontent.com/60363270/215256897-bb78172d-703b-4eba-8e99-8de36f323202.png">
 </p>
 
 ## Navigation
@@ -15,16 +13,17 @@ Emoji picker for iOS like on macOS
     - [Manually](#manually)
 - [Quick Start](#quick-start)
 - [Usage](#usage)
-    - [Required parameters](#required-parameters)
+    - [Delegate](#delegate)
+    - [Source view](#source-view)
     - [Selected emoji category tint color](#selected-emoji-category-tint-color)
     - [Arrow direction](#arrow-direction)
     - [Horizontal inset](#horizontal-inset)
     - [Is dismissed after choosing](#is-dismissed-after-choosing)
     - [Custom height](#custom-height)
     - [Feedback generator style](#feedback-generator-style)
-- [Localizations](#localizations)
+- [Localization](#localization)
 - [Contributing](#contributing)
-- [Getting started](#getting-started)
+- [Experiments](#experiments)
 
 ## Installation
 
@@ -153,15 +152,18 @@ viewController.feedbackGeneratorStyle = .soft
 
 ## Localization
 
+* Chinese 🇨🇳
 * English 🇬🇧
-* Russian 🇷🇺
-* Ukraine 🇺🇦
 * French 🇫🇷
 * German 🇩🇪
 * Hindi 🇮🇳
+* Russian 🇷🇺
 * Turkish 🇹🇷
+* Ukrainian 🇺🇦
 
 You can also contribute your language to this list. Please, read [following heading](#contributing) for more information.
+
+> ❗️ Note that the languages are arranged in alphabetical order
 
 ## Contributing
 
@@ -171,7 +173,7 @@ To be a truly great community, we need to welcome developers from all walks of l
 
 To give clarity of what is expected of our members, we have adopted the code of conduct defined by the Contributor Covenant. This document is used across many open source communities, and we think it articulates our values well. For more, see the [Code of Conduct](https://github.com/htmlprogrammist/EmojiPicker/blob/main/CODE_OF_CONDUCT.md).
 
-## Getting started
+## Experiments
 
 To play around with the project, contribute to it, see how it works or adapt it for yourself:
 
