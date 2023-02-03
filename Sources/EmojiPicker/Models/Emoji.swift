@@ -34,6 +34,10 @@ struct Emoji: Decodable, Identifiable {
     let version: Double
     /// Skin tone number. We save it so user can use the skin he chose.
     var skinToneIndex = 0
+    
+    enum CodingKeys: String, CodingKey {
+        case id, name, keywords, skins, version
+    }
 }
 
 extension Emoji {
