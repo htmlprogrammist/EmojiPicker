@@ -5,6 +5,8 @@
   <img width="640" alt="Emoji Picker Preview" src="https://user-images.githubusercontent.com/60363270/215256897-bb78172d-703b-4eba-8e99-8de36f323202.png">
 </p>
 
+![Swift CI badge](https://github.com/htmlprogrammist/EmojiPicker/actions/workflows/swift.yml/badge.svg)
+
 ## Navigation
 
 - [Installation](#installation)
