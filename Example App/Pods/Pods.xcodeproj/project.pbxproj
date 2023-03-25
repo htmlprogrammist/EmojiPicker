@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		026F70CA873745025D740EA8F37B5A4B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2986D62B22C60D901F173D8C03F52ABB /* Localizable.strings */; };
 		04631E91E77F1BDF6CD1C6FBC1E53AEA /* Pods-EmojiPicker_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E41074865C769D58022F8DB9C2B17FE /* Pods-EmojiPicker_Example-dummy.m */; };
+		10F5294129CEEEAC00D118A0 /* CategoryIconsDrawKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F5294029CEEEAC00D118A0 /* CategoryIconsDrawKit.swift */; };
 		1BD5BD4A3B12A75F38ED5F2FDB618219 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A9A7BCE09C329094A63A9346307BBC /* Bundle.swift */; };
 		2197DB04645805BA239B5D4B1FE84C3F /* EmojiPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDF49F927ED49808EDF97FCEB14B7FE /* EmojiPickerView.swift */; };
 		247A19BDE3664944E16330C8ACB4D375 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDFB975765E00A1BC7E04F006A8B740 /* UIColor.swift */; };
@@ -76,6 +77,7 @@
 		01F2518BBC39B4BACCF61C2B5E035BBC /* Pods-EmojiPicker_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EmojiPicker_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		0434193E612B0CFCBE170CAE6ED7203D /* 13.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; path = 13.json; sourceTree = "<group>"; };
 		067B05DDFD00E75BDDFC7564F924BE52 /* EmojiCollectionViewHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EmojiCollectionViewHeader.swift; sourceTree = "<group>"; };
+		10F5294029CEEEAC00D118A0 /* CategoryIconsDrawKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryIconsDrawKit.swift; sourceTree = "<group>"; };
 		12082593CF3D322E78D65F60C90CE972 /* CategoryTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CategoryTests.swift; path = Tests/EmojiPickerTests/CategoryTests.swift; sourceTree = "<group>"; };
 		1714EB656EE2FCC9FA0A89B3C30338DB /* EmojiPicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EmojiPicker.release.xcconfig; sourceTree = "<group>"; };
 		1820E9E8A4596D7A9F93535E6BAD5AA4 /* 13.1.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; path = 13.1.json; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 			isa = PBXGroup;
 			children = (
 				23442F8A0852CD623685A0F7BE0507F2 /* EmojiManager.swift */,
+				10F5294029CEEEAC00D118A0 /* CategoryIconsDrawKit.swift */,
 			);
 			name = Services;
 			path = Sources/EmojiPicker/Services;
@@ -678,6 +681,7 @@
 				39B099AC152338C3A617C77C5C3AA622 /* Observable.swift in Sources */,
 				CB6A01F77F3D1F5FBBB5585D5F509DA6 /* PickerArrowDirectionMode.swift in Sources */,
 				F1DCE6CFACDEE599EC225E7AA0E8C7EC /* Skin.swift in Sources */,
+				10F5294129CEEEAC00D118A0 /* CategoryIconsDrawKit.swift in Sources */,
 				4A24A8FB5C32E22034B7E37289C617FA /* TouchableEmojiCategoryView.swift in Sources */,
 				247A19BDE3664944E16330C8ACB4D375 /* UIColor.swift in Sources */,
 				37BCBFD2539F182214A51248A2ED5DD9 /* UIView.swift in Sources */,

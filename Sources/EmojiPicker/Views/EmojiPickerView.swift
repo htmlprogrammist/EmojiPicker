@@ -32,6 +32,16 @@ protocol EmojiPickerViewDelegate: AnyObject {
 
 final class EmojiPickerView: UIView {
     
+    private enum Constants {
+        static let separatorViewHeight: CGFloat = 1
+        static let categoriesStackViewSideInset: CGFloat = 16
+        static let verticalScrollIndicatorTopInset: CGFloat = 8
+        static let collectionViewMinimumLineSpacing: CGFloat = 0
+        static let collectionViewMinimumInteritemSpacing: CGFloat = 0
+        static let categoriesStackViewHeightMultiplier: CGFloat = 0.13
+        static let collectionViewContentInsets: UIEdgeInsets = .init(top: 0, left: 16, bottom: 0, right: 16)
+    }
+    
     // MARK: - Internal Properties
     
     weak var delegate: EmojiPickerViewDelegate?
@@ -41,9 +51,11 @@ final class EmojiPickerView: UIView {
     let collectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionHeadersPinToVisibleBounds = true
+        layout.minimumLineSpacing = Constants.collectionViewMinimumLineSpacing
+        layout.minimumInteritemSpacing = Constants.collectionViewMinimumInteritemSpacing
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.verticalScrollIndicatorInsets.top = 8
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        collectionView.verticalScrollIndicatorInsets.top = Constants.verticalScrollIndicatorTopInset
+        collectionView.contentInset = Constants.collectionViewContentInsets
         collectionView.backgroundColor = .clear
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(
@@ -78,10 +90,16 @@ final class EmojiPickerView: UIView {
     private var categoryViews = [TouchableEmojiCategoryView]()
     private var selectedCategoryIndex: Int = .zero
     
-    /// Describes height for `categoriesStackView`.
-    ///
-    /// - Note: The number `0.13` was taken based on the proportion of this element to the width of the EmojiPicker on macOS.
-    private var categoriesStackViewHeight: CGFloat { bounds.width * 0.13 }
+    /**
+     Describes height for `categoriesStackView`.
+     
+     The height is calculated based on the ratio of the proportions of the width ...
+     The number `0.13` was taken based on the proportion of this element to the width of the emoji picker on macOS.
+     */
+    // TODO: Описать по-другому этот комментарий (как написан первый)
+    private var categoriesStackViewHeight: CGFloat {
+        bounds.width * Constants.categoriesStackViewHeightMultiplier
+    }
     private var categoriesStackHeightConstraint: NSLayoutConstraint?
     
     // MARK: - Init
@@ -132,15 +150,24 @@ final class EmojiPickerView: UIView {
             collectionView.topAnchor.constraint(equalTo: topAnchor, constant: safeAreaInsets.top),
             collectionView.bottomAnchor.constraint(equalTo: separatorView.topAnchor),
             
-            categoriesStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            categoriesStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            categoriesStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -safeAreaInsets.bottom),
+            categoriesStackView.leadingAnchor.constraint(
+                equalTo: leadingAnchor,
+                constant: Constants.categoriesStackViewSideInset
+            ),
+            categoriesStackView.trailingAnchor.constraint(
+                equalTo: trailingAnchor,
+                constant: -Constants.categoriesStackViewSideInset
+            ),
+            categoriesStackView.bottomAnchor.constraint(
+                equalTo: bottomAnchor,
+                constant: -safeAreaInsets.bottom
+            ),
             categoriesStackHeightConstraint,
             
             separatorView.leadingAnchor.constraint(equalTo: leadingAnchor),
             separatorView.trailingAnchor.constraint(equalTo: trailingAnchor),
             separatorView.topAnchor.constraint(equalTo: categoriesStackView.topAnchor),
-            separatorView.heightAnchor.constraint(equalToConstant: 1)
+            separatorView.heightAnchor.constraint(equalToConstant: Constants.separatorViewHeight)
         ])
     }
     
@@ -171,11 +198,21 @@ final class EmojiPickerView: UIView {
     ///
     /// - Parameter section: Selected category index.
     private func scrollToHeader(for section: Int) {
-        guard let cellFrame = collectionView.collectionViewLayout.layoutAttributesForItem(at: IndexPath(item: 0, section: section))?.frame,
-              let headerFrame = collectionView.collectionViewLayout.layoutAttributesForSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, at: IndexPath(item: 0, section: section))?.frame
+        let indexPath = IndexPath(item: 0, section: section)
+        
+        guard let cellFrame = collectionView.collectionViewLayout.layoutAttributesForItem(
+                at: indexPath
+              )?.frame,
+              let headerFrame = collectionView.collectionViewLayout.layoutAttributesForSupplementaryView(
+                ofKind: UICollectionView.elementKindSectionHeader,
+                at: indexPath
+              )?.frame
         else { return }
         
-        let offset = CGPoint(x: -collectionView.contentInset.left, y: cellFrame.minY - headerFrame.height)
+        let offset = CGPoint(
+            x: -collectionView.contentInset.left,
+            y: cellFrame.minY - headerFrame.height
+        )
         collectionView.setContentOffset(offset, animated: false)
     }
 }

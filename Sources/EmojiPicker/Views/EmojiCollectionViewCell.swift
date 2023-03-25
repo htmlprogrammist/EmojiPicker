@@ -24,13 +24,18 @@ import UIKit
 
 final class EmojiCollectionViewCell: UICollectionViewCell {
     
+    private enum Constants {
+        static let emojiLabelFontSize: CGFloat = 30
+        static let selectedViewCornerRadius: CGFloat = 8
+    }
+    
     // MARK: - Private Properties
     
     private let emojiLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 30)
         label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: Constants.emojiLabelFontSize)
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -43,6 +48,7 @@ final class EmojiCollectionViewCell: UICollectionViewCell {
         setupLayout()
     }
     
+    @available(*, unavailable, message: "init(coder:) has not been implemented")
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -74,7 +80,7 @@ final class EmojiCollectionViewCell: UICollectionViewCell {
             selectedView.layer.cornerCurve = .continuous
         }
         
-        selectedView.layer.cornerRadius = 8
+        selectedView.layer.cornerRadius = Constants.selectedViewCornerRadius
         selectedBackgroundView = selectedView
     }
 }

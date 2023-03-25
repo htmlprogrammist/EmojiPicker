@@ -24,12 +24,17 @@ import UIKit
 
 final class EmojiCollectionViewHeader: UICollectionReusableView {
     
+    private enum Constants {
+        static let headerLabelInsets: UIEdgeInsets = .init(top: .zero, left: 7, bottom: 4, right: 16)
+        static let headerLabelFontSize: CGFloat = 14
+    }
+    
     // MARK: - Private Properties
     
     private let headerLabel: UILabel = {
-        let label: UILabel = UILabel()
+        let label = UILabel()
         label.textColor = .systemGray
-        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: Constants.headerLabelFontSize)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -42,6 +47,7 @@ final class EmojiCollectionViewHeader: UICollectionReusableView {
         setupLayout()
     }
     
+    @available(*, unavailable, message: "init(coder:) has not been implemented")
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -59,9 +65,18 @@ final class EmojiCollectionViewHeader: UICollectionReusableView {
         addSubview(headerLabel)
         
         NSLayoutConstraint.activate([
-            headerLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 7),
-            headerLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            headerLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4)
+            headerLabel.leadingAnchor.constraint(
+                equalTo: leadingAnchor,
+                constant: Constants.headerLabelInsets.left
+            ),
+            headerLabel.trailingAnchor.constraint(
+                equalTo: trailingAnchor,
+                constant: -Constants.headerLabelInsets.right
+            ),
+            headerLabel.bottomAnchor.constraint(
+                equalTo: bottomAnchor,
+                constant: -Constants.headerLabelInsets.bottom
+            )
         ])
     }
 }

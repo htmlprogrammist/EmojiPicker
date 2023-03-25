@@ -45,9 +45,8 @@ final class TouchableEmojiCategoryView: UIView {
         let inset = bounds.width * 0.23
         return UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
     }
-    /**
-     Target category index.
-     */
+    
+    /// Target category index.
     private var categoryIndex: Int
     
     private weak var delegate: EmojiCategoryViewDelegate?
@@ -111,10 +110,22 @@ final class TouchableEmojiCategoryView: UIView {
         addSubview(categoryIconView)
         
         NSLayoutConstraint.activate([
-            categoryIconView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: categoryIconViewInsets.left),
-            categoryIconView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -categoryIconViewInsets.right),
-            categoryIconView.topAnchor.constraint(equalTo: topAnchor, constant: categoryIconViewInsets.top),
-            categoryIconView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -categoryIconViewInsets.bottom)
+            categoryIconView.leadingAnchor.constraint(
+                equalTo: leadingAnchor,
+                constant: categoryIconViewInsets.left
+            ),
+            categoryIconView.trailingAnchor.constraint(
+                equalTo: trailingAnchor,
+                constant: -categoryIconViewInsets.right
+            ),
+            categoryIconView.topAnchor.constraint(
+                equalTo: topAnchor,
+                constant: categoryIconViewInsets.top
+            ),
+            categoryIconView.bottomAnchor.constraint(
+                equalTo: bottomAnchor,
+                constant: -categoryIconViewInsets.bottom
+            )
         ])
     }
 }

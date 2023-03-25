@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright © 2022 Egor Badmaev
+// Copyright © 2023 Egor Badmaev
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -67,8 +67,8 @@ final class EmojiManager: EmojiManagerProtocol {
     ///
     /// It takes major and minor version of a device and returns it as `15.5`.
     private var deviceVersion: Double {
-        let operatingSystemVersion = ProcessInfo().operatingSystemVersion
-        return Double(operatingSystemVersion.majorVersion) + Double(operatingSystemVersion.minorVersion) / 10
+        let version: OperatingSystemVersion = ProcessInfo().operatingSystemVersion
+        return Double(version.majorVersion) + Double(version.minorVersion) / 10
     }
     
     // MARK: - Internal Methods
@@ -80,8 +80,7 @@ final class EmojiManager: EmojiManagerProtocol {
             fatalError("Could not get data from \"\(emojiVersion).json\" file")
         }
         
-        guard let emojiSet = try? decoder.decode(EmojiSet.self, from: data)
-        else {
+        guard let emojiSet = try? decoder.decode(EmojiSet.self, from: data) else {
             fatalError("Could not get emoji set from data: \(data)")
         }
         
