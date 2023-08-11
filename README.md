@@ -152,6 +152,16 @@ Feedback generator style. To turn off, set `nil` to this parameter. The default 
 viewController.feedbackGeneratorStyle = .soft
 ```
 
+## Experiments
+
+To play around with the project, contribute to it, see how it works or adapt it for yourself:
+
+1. Clone or fork this repository to yourself
+2. Open `Example App/EmojiPicker.xcworkspace` file
+3. Expand `Pods` target
+4. Expand `Development Pods` and `EmojiPicker` directories. Here you can make your changes
+5. Build & Run project to see an immediate result on an example application. Have fun!
+
 ## Localization
 
 * Chinese 🇨🇳
@@ -169,18 +179,8 @@ You can also contribute your language to this list. Please, read [following head
 
 ## Contributing
 
-Contributions are welcomed and encouraged! Please see the [Contributing guide](https://github.com/htmlprogrammist/EmojiPicker/blob/main/CONTRIBUTING.md).
+This project is based on [MCEmojiPicker](https://github.com/izyumkin/MCEmojiPicker) and is one big contribution in it. And of course contributions are welcomed and encouraged here! Please see the [Contributing guide](https://github.com/htmlprogrammist/EmojiPicker/blob/main/CONTRIBUTING.md).
 
 To be a truly great community, we need to welcome developers from all walks of life, with different backgrounds, and with a wide range of experience. A diverse and friendly community will have more great ideas, more unique perspectives, and produce more great code. We will work diligently to make our community welcoming to everyone.
 
 To give clarity of what is expected of our members, we have adopted the code of conduct defined by the Contributor Covenant. This document is used across many open source communities, and we think it articulates our values well. For more, see the [Code of Conduct](https://github.com/htmlprogrammist/EmojiPicker/blob/main/CODE_OF_CONDUCT.md).
-
-## Experiments
-
-To play around with the project, contribute to it, see how it works or adapt it for yourself:
-
-1. Clone or fork this repository to yourself
-2. Open `Example App/EmojiPicker.xcworkspace` file
-3. Expand `Pods` target
-4. Expand `Development Pods` and `EmojiPicker` directories. Here you can make your changes
-5. Build & Run project to see an immediate result on an example application. Have fun!
